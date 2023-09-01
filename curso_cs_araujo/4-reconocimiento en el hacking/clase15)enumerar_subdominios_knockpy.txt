@@ -1,0 +1,12 @@
+clase15) enumerar subdominios de un dominio web
+
+subdominio=lo que está atrás del dominio: email.google.com
+email es el subdominio, mientras que google.com el dominio
+
+enumerarlos en un pentesting web sireve para tener un historias de ataques. Usamos la herramienta KnockPy
+abrir con 'python2' debido a que la VM tiene un python 3.11 y quiero abrir un python más antiguo (parece ser el python2)
+
+con 'nano' modifico un archivo desde la terminal sin necesidad de entrar a la carpeta de archivos
+
+python2 knock.py yahoo.com --wordlist archivo.txt (archivo con posibles subdominios de yahoo que en el curso
+nos dan un archivo con páginas con vulnerabilidades a descubrir)

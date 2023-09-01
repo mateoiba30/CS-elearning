@@ -1,0 +1,6 @@
+CMS significa content management system (sistema de gestión de contenido). CMS es un software informático o una aplicación que utiliza una base de datos para gestionar todo el contenido, y puede ser utilizado en el desarrollo de un sitio web.
+
+usamos la extension de wappalyzer para firefox para poder detectar el lenguaje de la pag, el servidor que usa, etc
+
+wpscan --url https://programacionfacil.org/bl......
+dice info de la pag web, debilidades, etc

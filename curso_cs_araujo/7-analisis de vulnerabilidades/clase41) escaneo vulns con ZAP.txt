@@ -1,0 +1,16 @@
+herramienta creasda por OWASP, es el más completo que vamos a ver
+zeth attack proxim (o algo así)
+es la herramienta más popular de cs
+podemos enviar peticiones http y mil cosas más, similar a burpsuite que es pago
+
+puedo elegir el modo arriba a la derecha donde hay escaneos agresivos, sigilosos, etc
+en el medio en la derecha, en automated scan, ponemos la url y busca directorios ocultos, robot.txt, etc
+abajo, en alertas dice las vulnerabilidades encontradas
+las alertas tienen banderas, que si son rojas son más graves. Vamos a esa vulnerabilidad, abrimos el link y podemos aprovechar la vulnerabilidad
+
+escanea muchos tipos de vulnerabilidades
+los descargué desde la web, puse sudo ./ZAP_2_13_0_unix.sh y lo empezé a instalar una vez ya descargado
+luego lo busco entre las apps como OWASP ZAP, no uso la app desde la terminal
+
+para atacar a scanme.org debo ingresar: http://www.scanme.org
+para escanear directo un a hacer http://192.168.0.121

@@ -1,0 +1,3 @@
+clase 7) NAT: tarjeta de red como lo usa mi compu principal, para usar completamwente la red
+en un uso normal, como ver videos en internet conviene usar el adaptador puente.
+puedo generar direccioens mac al azar y otras cosas como varios tiipos de adaptadores.

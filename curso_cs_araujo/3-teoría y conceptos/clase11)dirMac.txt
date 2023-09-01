@@ -1,0 +1,3 @@
+clase11) direccion Mac
+identificador de 48 bits de la tarjeta de red de cada dispositivo, dado por el fabricante. Es fija, 
+usado para el acceso a internet y para mandar paquetes de información hacia otros dispositivos

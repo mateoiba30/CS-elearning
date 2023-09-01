@@ -1,0 +1,28 @@
+otra herramienta para osint a instagram
+osintgram
+
+en la carpeta de osintgram, en config, credentials.ini pongo nombre y usuario de un usuario de instagramd
+no recomendado usar mi propio usuario, hacer un insta  con un mail temporal de temp-mail.org por ejemplo
+como pavewa4686@iturchia.com o creando de otra manera una cuenta en insta
+
+si al usar pip no anda, usar pip3
+tambien instalar la herramienta leafpad es mejor para editar textos que andar usando nano
+
+una vez actualizada la info de credentials.ini, hay que modificar el settingd.jason, donde vaciamos el contenido de las llaves y guardamos
+
+para iniciar la herramienta:
+python3 main.py usuarioInsta //al estar en la ubicacion de carpetas corresponsientes
+
+list // enlista las funciones de la herramienta
+likes // likes de las publicaciones del objetivo
+también aparece biografía, seguidores, id, etc
+hashtags // los hagshtags usados de la cuenta
+tagged // a quer usuarios taggeó
+stories // guarda las historias en output de la carpeta de la herramienta
+wtagged //lista de usuarios taggeados
+w comented // lista de usuarios que comentaron las publicaciones de la victima, etc
+addrs // todas las localizaciones de sus publicaciones
+
+etc
+
+el resto de funciones no son tan importantes y no las pongo pero estan enlistadads al poner list

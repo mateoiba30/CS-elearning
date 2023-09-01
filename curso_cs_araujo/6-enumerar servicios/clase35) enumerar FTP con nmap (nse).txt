@@ -1,0 +1,17 @@
+NSE = nmap scripts engine
+
+Un servidor FTP es un software de computadora que consta de uno o más programas que pueden ejecutar comandos dados por un cliente remoto, como recibir, enviar, eliminar archivos, crear o eliminar directorios, etc
+Los puertos típicos utilizados para conectarse al FTP son el 20 y el 21 para la gran mayoría de los casos, aunque en algunos proveedores esto puede variar. Por lo general se usan dos tipos de transferencia: una es la ASCII (como páginas html) y la otra es la de tipo Binario(imágenes, audios, videos, etc).
+Como decíamos, el servicio FTP sirve para transferir archivos/datos, y los mismos en la mayoría de los casos son transferidos desde el server al equipo local o viceversa a una velocidad máxima, pero la desventaja de la conexión de FTP típica es que todos los datos, incluyendo nombre de usuario y contraseña de la cuenta FTP, son enviados en formato de texto plano, por lo que si un tercero malintencionado logra interrumpir la conexión podrá hacerse con información muy valiosa para nosotros.
+Cabe recordar que la trasferencia de archivos es bidireccional, puesto que ambas partes pueden actuar como cliente o servidor, siempre dependiendo de quién sirva el archivo y quién lo solicite.
+
+Si queremos asegurar el servicio de FTP, debemos optar por usar una aplicación del tipo SFTP, la cual se encarga de cifrar el contenido que se transfiere, de manera tal que si alguien logra hacerse con la información de la transferencia, la misma estará cifrada.
+
+nmap --script=ftp-anon (ip)// chequea si la compu de ese ip tiene algún  puerto lógico de servicio ftp que permita loguearnos de manera anónima
+nmap --script=vsftpd-backdoor (ip) // se fija si hay algún puerto ftp versión vsftpd que sea vulnerable a algún ataquea
+searchsploir vsftpd //devuelve links para poder explotar puertos de servicio ftp que sean vulnerables
+nmap --script=ftp-syst (ip) //da info del servicio como su versión y otros datos más
+
+obviamente hay más scripts
+
+

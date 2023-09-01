@@ -1,0 +1,125 @@
+API = interfaz que nos ayudan a conectarnos con otras aplicacione (métodos HTTP para comunicarme con una computadora sin saber como funcionan estos métodos) para utilizar su código (siempre y cuando lo permitan), generan apps no aisladas que compartan datos entre si y nos ayuda a diseñar e integrar el software de las aplicaciones.
+Todos los servicios web son API, pero no todas las API son servicios web.
+Contrariamente a las APIs Públicas, las APIs Privadas son de uso exclusivo de las organizaciones para las cuales fueron desarrolladas. Esas interfaces dan acceso a sistemas y datos internos de las empresas, por eso, solo pueden acceder a ellas sus propios desarrolladores. Estas requieren de una autenticación con el uso de tokens(aen general en el formato jwt)
+las APIs pueden ser de varios tipos/arquitecturas, como por ejemplo REST
+pueden ser locales (dentro de un mismo dispoistivo) o remotas (consigo datos de una app de cualquier lugar del mundo). Estas remotas pueden usar servicios webs (con protocolo HTTP) usando el protocolo SOAP o la arquitectura REST (actualmente lo más popular)
+-----------------
+crawlers son bots que buscan datos en Internet, analizan el contenido y guardan la información en índices y bases de datos para mejorar el rendimiento de los motores de búsqueda
+----------------
+CVE= Common Vulnerabilities and Exposures, es una lista de información registrada sobre vulnerabilidades de seguridad conocidas, en la que cada referencia tiene un número de identificación CVE-ID
+---------------
+dominio: nombre de un sitio web, ej "google"
+--------------
+DNS: Es un sistema que permite traducir nombres de dominio legibles por humanos, como "Google ", en direcciones IP numéricas que son utilizadas por las computadoras para comunicarse en Internet. pasa una url web a ip del host
+--------------
+header es un título de una pag web.
+En ciberseguridad son utilizadas por el servidor y por el navegador para establecer condiciones del envío de información. Un ejemplo de esta cabecera es:
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+En esta el servidor indica que durante los próximos 31536000 segundos (1 año) la web y sus subdominios se deberán cargar siempre mediante HTTPS
+otro ejemplo es el de X-XSS-Protection, el cual nos ayuda en la defensa frente a ataques de tipo Cross-Site Scripting (XSS). Con esta le decimos al navegador como actuar si durante la carga de la web se detecta un ataque de tipo XSS reflejado.
+----------------
+hotspot es un lugar físico donde la gente puede acceder a Internet, normalmente mediante una red WI-FI.1
+----------------
+IMAP: protocolo de red para acceso a mensajes
+------------------
+indexar es hacer visible una página web o una sección de ella. El robot.txt dice que está indexado y que no
+-------------
+interfaz = capa de abstracción: forma de ocultar los detalles de implementación de ciertas funcionalidades.
+--------------
+Ip es una de muchos protocolos de red
+ip = etiqueta numérica que identifica de manera lógica y jerárquica a una interfaz —habitualmente un dispositivo — conectada a la red
+IP significa “protocolo de Internet”, que es el conjunto de reglas que rigen el formato de los datos enviados a través de Internet o la red local.
+la ip se llama pública si identifica una computadora en el internet, y es privada si está en una red privada.
+Una dirección IP pública puede ser dinámica o estática. Una IP estática es aquella que no cambiará a los largo del tiempo. Una IP dinámicas son las que cambian y no siempre son la misma, habitualmente, al reiniciar el router.
+Todas las direcciones IP (IPv4 o similar) contienen cuatro números separados por un punto y conocidos como octetos (cuatro octetos). Estas se dividen en clases dependiendo del valor del primer octeto
+para conocer mi ip privada debo usar la terminal, para conocer la pública simplemente la puedo googlear porque es la que uso en internet
+IPv4 (la de 4 octetos separadas por puntos) tiene una longitud de dirección de 32 bits, mientras que IPv6 tiene una longitud de dirección de 128 bits, por lo cual la ipv6 es más segura y difícil de dsscubrir. Hoy en día se usan ambas
+--------------
+JSON =JavaScript Object Notation, es un formato ligero de archivos de intercambio de datos basado en JavaScript, se diferencian en el uso de las comillas. Es el más popular por su sencillo comprendimiento.
+---------------
+plugin es un complemento de software que ayuda a que un programa haga algo que normalmente no haría por sí solo. Por ejemplo, WordPress es un CMS en el que puedes agregar multitud de plugins. Es decir, el plugin lo que hace es implementar de nuevas funciones un determinado software
+similar a scripts
+---------------
+OSI= tipo de arquitectura/modelo de interconexión de sistemas abiertos que estandariza fases o pilas para la transmición de datos. Además especifica las siete capas para el transporte de la información
+dentro de todas estas capas, la cuarta es de transmición de datos y sus protocolos para la transmición de datos son los mencionados TCP y UDP.
+Modelo OSI: sistema normativo conformado por siete niveles que define la interconexión de los sistemas en las distintas fases, también conocidas como capas, por las cuales deben atravesar los datos para viajar de un dispositivo a otro en una red de telecomunicaciones
+----------------
+puertos
+
+Los puertos físicos se refieren al tipo de enchufe que permite la interconexión entre distintos dispositivos de hardware
+los que se utilizan para servidores son : VGA para señales de video, IPMI para adminsitrar servidores, ethernet comunica equipos de redes para intercambiar datos, Serie para transmición de datos entre dispositivos red
+
+los puertos lógicos son espacio en la RAM asociados con un puerto físico. Son interfaces de software qeu ayudan a organizarse al programador sin necesidad de saber el nombre y cantidad de puertos físicos
+según el número (por convención internacional) de puerto se puede identificar el software que lo usa para entregar los datos solicitados.
+Hay dos tipos de protocolo básicos a la hora de transferir información por internet para los puertos lógicos: TCP y UDP. 
+Ambos permiten que los programas envíen mensajes a las aplicaciones de otros sistemas principales y reciban mensajes de dichas aplicaciones.
+se clasifican en bien conocidos, registrados y dinámicos/privados
+bien conocidos: del 0 al 1023, usados para servicios, programas o protocolos, con cada número de puerto reservado para cierta tarea
+registrados: del 1024 al 49151, reservados para el uso de aplicaciones donde nuevamente cada número de puerto cumple siempre la misma tarea
+dinámicos o privados: desde 49152 hasta 65535, usados por el SO para conectarse momentaneamente con una aplicación. No hay números asignados para ciertas tareas, se usan acorde a las necesidades de conexión
+-----------
+protocolo = script: código adicional para brindar más acciones a un software
+----------------
+protocolo de red: es un estándar de comunicaciones. Contiene las reglas necesarias y la información sobre cómo las computadoras intercambian datos entre sí.
+
+todos los protocolos hacen lo siguiente:
+-Establecer una conexión confiable entre los equipos implicados en la comunicación.
+-Dirigir los paquetes de datos enviados al destinatario correcto.
+-Si los paquetes no llegan, el protocolo se asegura de que se reenvíen.
+-Transmisión sin errores de los paquetes de información.
+-Organización y fusión de los paquetes de datos entrantes.
+-Cifrado de los datos transmitidos para que no puedan ser leídos por terceros (encriptación).
+
+protocolos populares: IP, IMAP, SMTP, POP3, HTTP, FTP, SMB, TCP, UDP (últimos 2 mencionados en los puertos lógicos), etc.
+
+hay diferentes tipos de protocolos de red:
+-protocolos web como HTTP, HTTPS, TLS, SSL, etc
+-protocolos de transferencia de archivos como FTP, TFTP, SFTP, FTPS, SMB, NFS
+-protocolos de correos electrónicos como SMTP
+-protocolos de gestión como Telnet, SSH, SNMP
+-protocolos de medios como RTP, RTSP
+
+Hay 2 modelos principales para estos protocolos: OSI y TCP/IP. Ambas hacen uso del IP
+---------------
+proxy = proxi : servidor que hace de intermediario, ayuda a ocultar la IP de manera similar a un VPN. Esto ayuda a ocultar la identidad y que no conozcan nuestra ubicación geográfica
+------------
+REST arquitectura API = Transferencia de Estado Representacional = API de RESTful : REST no es un protocolo ni un estándar, sino más bien un conjunto de límites de arquitectura.
+----------
+robots.txt es un archivo que indica a qué partes de nuestra web pueden acceder los robots o crawlers de los buscadores. Si se modifica este archivo, se puede acceder a toda la parte del backend de la página web
+-----------
+servidor web/red= servidor HTTP= servicio web= host de una web/red
+
+los servidores web de una url tienen ip
+nmap funciona tanto con un ip o una url por este motivo
+yo creo que la ip de mi VM metasplitable funciona como url gracias a rapid7 que hace que sean servidores de una página llamada como su ip. Rapid7 es la compañía que hace las máquinas vulnerables conocidas como metasploitable
+---------------
+SMB: protocolo de red para compartir archivos, impresoras, etc
+----------------
+SMTP= El protocolo de red simple de transferencia de correo (SMTP) es un estándar de red (otros protocolos de red son el http, ftp, etc) para el envío de correos electrónicos
+-----------------
+subdominio: subparte de un dominio
+-------------
+TCP: El protocolo TCP (normalmente comparado con el UDP) es un protocolo conectivo, fiable y orientado a conexión, se encarga de que lleguen todos los segmentos correctamente, y realiza las retransmisiones necesarias en caso de que ocurra algún tipo de problema, además, también garantiza el orden, por lo que las capas superiores no tienen que encargarse de ello. 
+------------------
+TCP/IP: no es lo mismo que el TCP, este es un modelo con el protocolo TCP se divide la información en pequeños "paquetes de información" que viajan de forma independiente y se ensamblan de nuevo al final del proceso, mientras que IP es el encargado de encontrar la ruta al destino.
+---------------
+UDP es un protocolo no orientado a conexión, no es fiable, no garantiza que lleguen los paquetes ni tampoco su orden, para ello las capas superiores (capa de aplicación) garantizarán esto.
+---------------
+URI: identificador único/uniforme de recursos de una página web = URL(ubicacion) + URN(nombre) (puede solo tener a uno de ambos, como solo URL)
+identifica un recurso y lo diferencia de otros mediante un nombre, una ubicación o ambos. 
+suele estar indicado en formanto XML
+usado para identificar páginas webs y otras cosas dentro del internet como correos electrónicos, tiene un uso amplio
+---------------
+URL: tipo de URI que es un identificador de una página web por medio de la ubicación
+https://www.example.org/gatos
+protocolo=esquema+subdomino+nombre de dominio+TDL (dominio de nivel superior)=extensión+ ruta=path=página=directorio
+-------------
+URN: tipo de URI que es un identificador de una página web, pero no indican exactamente dónde se encuentra ese objeto
+-------------------
+VPN: red pirvada virtual que oculta nuestro IP como un proxy, pero además cifra nuestros datos. Suelen ser pagas y no se suelen trabar como los proxys. Hay VPN de directivas de no registro, lo que significa que no registran nuestro tráfico (lo que hacemos eninternet)
+------------------
+waf (web application firewall)
+------------
+wordpress: popular software para desarrollo web
+----------
+XML tipo de archivo más tradicional en envío de datos entre webs, actualmente reemplazaso por JSON

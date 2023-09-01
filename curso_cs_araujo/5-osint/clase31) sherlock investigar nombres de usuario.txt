@@ -1,0 +1,20 @@
+a traves de un nombre de usuario, lo busca en diferentes redes sociales
+para aumentar las porbabilidades de que el ataque salga bien
+
+sherlock/sherlock/sherlock.py es la herramienta a ejecutar con python3
+
+python3 sherlock.py // tira las herramientas
+python3 sherlock.py username // busca al usuario en diferentes redes sociales
+
+analiza más de 200 webs
+
+python3 sherlock.py username --output resultado.tx // la salida la guarda en una rchivo de texto
+lo deja guardado al archivo en la carpeta que me encontraba
+si no pongo nada me crea un archivo con el nombre de usuario en formato .txt en donde estoy parado
+
+sudo apt-get install tor // para usar la siguiente herramienta
+python3 sherlock.py --tor username // muchas webs bloquean este protocolo que es para intentar ser más anónimo
+python3 sherlock.py username -t //otra manera de hacerlo
+
+si al final del comando pongo :
+--print-all // me escribed también las pags webs que no encontró a ese nombre se usuario

@@ -1,0 +1,11 @@
+vamos a enumerar servidores dns
+
+DNS son las iniciales de Domain Name System (sistema de nombres de dominio) y es una tecnología basada en una base de datos que sirve para resolver nombres en las redes, es decir, para conocer la dirección IP de la máquina donde está alojado el dominio al que queremos acceder
+nos permite relacionar una dirección escrita, como sería geeknetic.es, a una dirección IP que puede ser fija o dinámica
+
+por ejemplo el dns de google es 8.8.8.8 y el dns secundario es 8.8.4.4
+
+herramienta dns enum viene instalada con kali linux asocia numero de dominio con ip
+dnsenum scanme.org(pongo url) //no para ver mi ip
+
+dice adress, ip, servidor, en mail mx dice el servidor encargado de administrar los mails del dominio, etc

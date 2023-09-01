@@ -1,0 +1,5 @@
+dnesenum scanme.org // obtenemos una IP 
+esa IP nos dice las coordenadas, país, ISP, etc
+(Un ISP conecta a sus usuarios a Internet a través de diferentes tecnologías como ADSL, cablemódem, GSM, dial-up, fibra óptica, satélite, streaming, etc.)
+
+who.is es una página que nos da datos de una IP

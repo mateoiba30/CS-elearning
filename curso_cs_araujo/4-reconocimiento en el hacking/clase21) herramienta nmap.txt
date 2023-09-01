@@ -1,0 +1,57 @@
+herramienta para scaneo de redes.
+Para: saber computadoras activas dentro de la red, detectar vulnerabilidades, saber la version de los servicios, que puertos estan abiertos, su OS, y mas recolecta de informacion que no escribi en este doc
+
+nmap https(url o ip de un servidor (si no hostea nada no me sirvea el ip) o archivo con varios ip/urlsa o el nombre de un host, etc)
+
+como siempre, con -h me tira todas las posibles acciones
+
+el dominio scanme.nmap.org se puede escanear sin problemas
+
+nmap lo que hace es mandar paquetes de datos icmp a una o más computadoras esperando respuesta (como la funcion ping)
+El Protocolo de control de mensajes de Internet (ICMP) es un protocolo en la capa de red que utilizan los dispositivos de red para diagnosticar problemas de comunicación en la red. El ICMP se utiliza principalmente para determinar si los datos llegan o no a su destino a su debido tiempo.
+Los paquetes ICMP incluyen un encabezado de ICMP después de un encabezado de dirección IP normal.
+este tipo de comando analizaremos los 65536 puertos lógicos disponibles en cada dispositivo.
+es capaz de analizar una dirección IP o una red (url) entera para identificar todos los dispositivos que se encuentran conectados a ella.
+
+nmap -F/-f <ip/máscara de red>// analiza el host del ip, y toda la red
+
+si hay respuesta de la computadora significa que esta en linea, sino devuelve destination host unreachable
+
+-Pn reduce lo que hace el escaneo para pasar desapercibido, no determina si el host está activo, pero no devuleve menos informacion
+
+antes mandando paquetes icmp se determinaban los puertos abiertos, ahora los firewalls rechazan estas solicuitudes y es por eso que nmap tiene tecnicas de scaneo avanzadas mandando diferentes tipos de paquetes
+
+-p elegimos que puerto/s escanear:
+nmap -p80 181.97.150.225 (escaneo puerto 80 del ip)
+-p1-65535 para escanear del 1 al 65535 (todos los puertos que existen)
+
+nmap --top-ports 10 181.97.150.225 (escaneo los 10 puertos mas comunes)
+
+-sV para detectar la version de los servicios de la victima en cada puerto. Muy usado para analizasr vulnerabilidades
+puedo buscar como aprovechar vulnerabilidades haciendo:
+searchsploit version_del_servivio_de_un_puerto
+
+tengo lista de scripts en /usr/share/nmap/scripts
+los scripts hacen tareas de escaneo, termninan en .nse = nmap script engine
+el script http-enum.nse enumera los protocols http 
+nmap --script="http-enum.nse" 123.432.4532(ip)
+el scritp ftp-vuln-cve2010-4221.nse chequea si es vulnerable a esa version de ftp
+otro ej: nmap --script="ftp-vsftpd-backdoor.nse" 192.168.0.35(ip)
+
+sudo nmap -O 124.432.54.543 (sudo porque necesitamos ser superusuario para este comando que permite saber el sistema operativo victima)
+esto tambien devuelve la direccion MAC =  que corresponde de forma única a una tarjeta o dispositivo de red signado por el fabricante a una pieza de hardware de red (como una tarjeta inalámbrica o una tarjeta Ethernet).
+
+el apartado de timing y  performance es para cambiar el tiempo de mi escaneo, haciendo mas y menos cosas
+nmap -T0 (ip) //0 muy lento, 5 el mas rapido
+
+----
+en el apartado de firewall:
+-e usamos otra interfaz de red para el escaneo //Una interfaz de red es el punto en el que se conectan dos partes de equipos de red o capas de protocolo. Normalmente, esto se representa mediante una tarjeta de interfaz de red física (NIC) para la conexión entre un equipo y una red privada o pública
+el NIC es un controlador de interfaz de red que asigna la MAC = direccion fisica, a fin de proporcionar a la capa IP una interfaz coherente con todos los adaptadores de red que puedan estar presentes
+
+podemos hacer los escamenos desde otra dir MAC, desde proxis, etc
+----
+
+apartado OUTPUT
+puedo controlar el formato (para crear un archivo) de la salida del nmap
+nmap -oN resultadosNmap.txt 3243.432.4  //salida en nuevo archivo

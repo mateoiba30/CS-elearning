@@ -1,0 +1,8 @@
+enum4linux para obtener info, archivos compartidos en una red, etc
+esta herramienta enumera usuarios de máquinas linux, o enumerar archivos compartidos en la red, etc
+
+está bueno antes de analizar en base a un IP, hacer "ping (ip)" para comprobar que la máquina responda
+enum4linux (ip)//devuelve info genérica como usuarios conocidos, los nombres de la máquina, etc (esto varía según la máquina, depende de los servicios que está corriendo como host)
+//si tiene archivos compartidos, etc
+
+enum4linux -h muestra más herramientas, como siempre

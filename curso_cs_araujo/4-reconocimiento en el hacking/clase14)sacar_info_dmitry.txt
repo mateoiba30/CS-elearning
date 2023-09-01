@@ -1,0 +1,7 @@
+clase14)
+
+sacar info de dominios con "dmitry" en la terminal kali
+pongo el dominio "scanme.org" porque es un dominio de libre escaneo (legal)
+la herramiento tira datos como el IP, el nombre del dominiom rango de la ip, datos del servidor, fecha
+de creacion del domino
+

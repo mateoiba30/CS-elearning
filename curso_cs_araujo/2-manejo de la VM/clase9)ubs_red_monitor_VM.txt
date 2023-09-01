@@ -1,0 +1,7 @@
+clase 9) uso de péndrive para mi maquina virtual.
+para esto en configuracion vamos a usb, habilitamos controlador, a la derecha ponemos en agregar un usb.
+suele aarecer que detecta tmb el mouse y teclado dentro de estos usbs
+
+para un ataque modo monitor, en este caso de red, es necesario necesito la tarjeta de red modo monitor: en red ponerme en
+modo NAT y luego agregamos en usb la tarjeta de red. En nuestra máquina virtual van a dejar de funcionar la
+tarjeta de red (usb), preo vamos a poder realizar ataques en nuestra VM.

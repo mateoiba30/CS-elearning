@@ -1,0 +1,17 @@
+-u suele indicar una url (dominio)
+-w suele indicar una worlist (lista de palabras, ej: subdominios)
+-h para help
+
+gobuster help => gobuster -h
+
+gobuster dir -u https://dominio.com -w wordlist.txt
+dice a cuales se puede acceder y a cuales no. Al devolverlos ordenados se dice que están enumerados
+
+gobuster dir -u https://dominio.com -w wordlist.txt -x .php .txt .js .asp .net .cgi .html etc...
+devuelve archivos dentro del directorio del tipo especificado y de nombre dentro de la wordlist
+
+
+para isntalar gobuster tuve que hacer lo que dice en:
+https://www.youtube.com/watch?v=CtNwQfyfr0c
+y luego lo que dice en
+https://www.javatpoint.com/how-to-install-gobuster-tool-on-kali-linux

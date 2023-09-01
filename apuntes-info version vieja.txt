@@ -1,0 +1,94 @@
+Ciberseguridad
+
+martes, 14 de marzo de 2023
+19:13
+
+Ciberseguridad:
+
+norma iec 62.443 Y la Iso 27.001
+
+ctfg.org pag
+
+Ver el evento de la eko party, su canal es https://youtu.be/FQ-J9e5hxDg
+
+einer@info.unlp.edu.ar
+Un referente de la uni al igual que Emiliano Pisitelli para OSINT (info púlbica de difícil acceso)
+
+Hackeo de open source con Sherlock por ejemplo
+Hack the box, pag pa ver máquinas vulnerables avanzadas virtuales para hackear
+
+Se usan lenguajes en todos los niveles, está bueno saber python y sql
+
+COMPETENCIA DEL LINTI:
+Después de la materia de ciber seguridad contactarme con Matiasp@inti para entrar
+
+CURSOS:
+https://learn.microsoft.com/en-us/certifications/exams/sc-900/
+
+hackthebox
+
+https://portswigger.net/web-security
+gratis recomendado por los hackers de mercadolibre
+
+https://linktr.ee/ekoparty ahí hay cursos para gente con conocimientos previos y
+Portswigger juanpi
+
+Cursos cissp
+recomendado por ekoparty (el q hace Juani)
+https://docs.google.com/document/d/1Bd9Q_9hitX4hNs2hNRuaYQ_hnzmq15saT5YIV8lkCe4/edit
+
+ Plan de aprendizaje de seguridad aws
+ Cybrary
+
+https://learn.microsoft.com/es-es/training/paths/beginner-python/
+
+https://attack.mitre.org/
+
+LIBROS: 
+Tribe of Hackers: Cyber security Advice from the best hackers in the world
+Tribe of Hackers red team: tribal knowledge from the best in offensive cybersecurity
+Los de peter
+ El libro blanco del hacker
+El libro negro del havker
+Hackear al hacker
+
+YOUTUBE:
+Hola mundo (unos pocos videos sencillos)
+
+El pingüino de Mario (canal de YouTube pentester básico)
+
+S4viOnLive (canal de YouTube pentester avanzado)
+
+Ambos canales a hack the box y vulnhub (más sencillo)
+
+youtube Peter:
+David bombal (material más denso)
+Network chuck (videos llevaderos)
+Neal wu (competencias hacking)
+Loi Liang Yang
+Álvaro chirou
+Zsecurity
+Hak5 (vende hardware pa hacking)
+
+twitter de un hacker pro
+https://twitter.com/soyelmago
+
+------- flaco del lolla
+
+QA quality assurance es sencillo
+Test automation university
+ Pág de apply tools
+ Hay cursos gratis
+Y da certificados
+
+Librería selenium es lo más usado en QA. Lo suelen usar con Java o c# sharp
+
+Conviene hacer cursos que dan las empresas, dónde te certifican y contratan. 
+Aunque si hago eso el inicio va a estar complicado
+
+Bootcamp se llaman eso de las empresas y varias lo hacen
+
+La plata está más en front end que en fullstack o backend
+ Un front end con más de 5 años de experiencia y buen inglés gana arriba de 10mil dólares en negro en el extranjero
+
+-------

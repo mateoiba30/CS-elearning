@@ -1,0 +1,8 @@
+WAF web application firewall //es quien rechaza conexiones para proteger a la web
+
+en las apps ir a 01, identificacioñn de IDS/IPS, wafwoof //herramienta que identifica WAF
+
+en terminal:
+wafw00f -a https://...(url)
+
+esto ya no es legal hacerlo en cualquier pagina

@@ -1,0 +1,188 @@
+Ciberseguridad:
+
+
+CURSOS GRATIS:
+
+Peter Udemy:
+hay muchos
+
+ekoparty
+https://docs.google.com/document/d/1Bd9Q_9hitX4hNs2hNRuaYQ_hnzmq15saT5YIV8lkCe4/edit?usp=sharing //cursos gratis recomendados por hackacademy antes de aplicar a una beca a un curso cheto
+BIBLIOGRAFÍA cursos ekopartyDesde Ekoparty Hackademy te sugerimos un listado de bibliografía que puede ayudarte a aprender y/o reforzar los conocimientos básicos requeridos para el ingreso a nuestros programas:RedesCOMER, Douglas."Redes globales de información con Internet y TCP/IP". Prentice-Hall.STALLINGS, William."Comunicaciones y Redes de Computadores".  Prentice-Hall.TANENBAUM, Andrew. ”Redes de computadores". Prentice-Hall.Sistemas OperativosTANENBAUM, Andrew. Sistemas Operativos. Diseño e implementación. Prentice Hall.STALLINGS, William. Sistemas Operativos. Aspectos internos y principios de diseño. Pearson Ed.SILBERSCHATZ A. “Fundamentos de sistemas operativos”. McGraw-Hill.
+cursos de hackacademy pagos o solicitando becas
+https://linktr.ee/ekoparty ahí hay cursos para gente con conocimientos previos
+Cursos cissp recomendado por ekoparty  https://docs.google.com/document/d/1Bd9Q_9hitX4hNs2hNRuaYQ_hnzmq15saT5YIV8lkCe4/edit
+
+professormesser.com compTIA-based resources -> gratis recomendadas poe el libro
+A+
+Network+
+Linux+
+Security+
+
+microsoft
+learn.microsoft.com tiene varias alternativas
+microsoft: https://learn.microsoft.com/en-us/certifications/exams/sc-900/
+https://learn.microsoft.com/es-es/training/paths/beginner-python/
+
+hackthebox
+
+https://portswigger.net/web-security
+gratis recomendado por los hackers de mercadolibre
+
+Portswigger juanpi
+
+Plan de aprendizaje de seguridad aws
+Cybrary
+
+https://attack.mitre.org/
+
+https://www.netacad.com/ introduccion a la ciberseguridad
+
+instagram darfe_empresa
+
+OTROS CURSOS BARATOS
+100usd https://learn.microsoft.com/en-us/certifications/exams/sc-900/
+hackthebox
+ekoparty hackacademy (hay becas)
+coderhouse (hay becas)
+google, microsoft, etc
+hay más en el libro que me prestó peter
+
+
+
+LIBROS: 
+Tribe of Hackers: Cyber security Advice from the best hackers in the world
+Tribe of Hackers red team: tribal knowledge from the best in offensive cybersecurity
+Los de peter
+ El libro blanco del hacker
+El libro negro del havker
+Hackear al hacker
+
+
+
+
+YOUTUBE:
+
+soydalto (recomendado libro general y sencillo)
+danielmiessler (recomendado libro)
+IppSec´s (recomendado libro)
+ekoparty https://youtu.be/FQ-J9e5hxDg
+Hola mundo (unos pocos videos sencillos)
+El pingüino de Mario (canal de YouTube pentester básico)
+S4viOnLive (canal de YouTube pentester avanzado)
+Ambos canales a hack the box y vulnhub (más sencillo)
+s4vitar (el de inyeccion sql y m@s de CS)
+Sebastian Lague (contenido general)
+DarFe Learning Consultinf (redes y ciberseguridad, tmb tienen cursos en insta)
+HackerSploit
+
+youtube Peter:
+David bombal (material más denso)
+Network chuck (videos llevaderos)
+Neal wu (competencias hacking)
+Loi Liang Yang (material más denso)
+Álvaro chirou (material más denso)
+Zsecurity (material más denso)
+Hak5 (vende hardware pa hacking)
+
+
+
+
+INFO DE LABORATORIOS
+danielmiessler.com
+pentestlab.blog/log
+jhalon.github.io/becoming-a-pentester
+blog.pentesterlab.com
+
+
+
+
+HACKIKNG SYSTEM PARA WINDOWS
+github.com/fireeye/commando-vm
+
+
+
+HERRAMIENTAS PENTESTING
+www.wireshark.org
+www.metasploit.com
+www.tenable.com
+www.openvas.org
+
+
+
+INFO SOCIAL ENGINEERING
+Hadnagy
+@_snDww
+@cgsil-vers
+@HydeNS33k
+
+
+
+RECURSOS CTF
+ctftime.org
+youtube  John Hammond
+picoctf.com
+vulnhub.com
+overthewire.org/wargame (tal vez termina de manera diferente el link)
+nahamcon.com
+
+
+
+TACTICAS DE CS EXPLICADAS
+https://attack.mitre.org/
+
+MAS RECURSOS EDUCATIVOS:
+twitter de un hacker pro https://twitter.com/soyelmago
+SANS Institute www.sans.org
+MIle2 mile2.com
+eLearning Security www.elearnsecurity.com
+Pentester Academy www.pentesteracademy.com
+The Cyber Mentor´s training
+Pentester Lab Pro
+
+
+
+
+OPTATIVAS FACULTAD:
+intro a la ciberseguridad, intro a la forensia digital, seguridad y privacidad de redes, desarrollo seguro de aplicaciones
+también tener en cuenta IoT, IA, BigData, Web, etc
+
+
+
+
+RECOMENDACIONES
+
+recomendaciones invap: norma iec 62.443 Y la Iso 27.001, ctfg.org pag
+
+recomendaciones facu: Ver el evento de la eko party, einer@info.unlp.edu.ar -> Un referente de la uni al igual que Emiliano Pisitelli para OSINT (info púlbica de difícil acceso)
+
+COMPETENCIA DEL LINTI:
+Después de la materia de ciber seguridad contactarme con Matiasp@inti para entrar después de haber hecho la materia redes y comunicaciones
+estar atento a eventos de ekoparty y DEFCON
+
+Hackeo de open source con Sherlock por ejemplo
+Hack the box, pag pa ver máquinas vulnerables avanzadas virtuales para hackear
+Se usan lenguajes en todos los niveles, está bueno saber python y sql
+
+intentar hacer LAN en casa
+
+---------
+flaco del lolla que trabaja de QA
+
+QA quality assurance es sencillo
+Test automation university
+ Pág de apply tools
+ Hay cursos gratis
+Y da certificados
+
+Librería selenium es lo más usado en QA. Lo suelen usar con Java o c# sharp
+
+Conviene hacer cursos que dan las empresas, dónde te certifican y contratan. 
+Aunque si hago eso el inicio va a estar complicado
+
+Bootcamp se llaman eso de las empresas y varias lo hacen
+
+La plata está más en front end que en fullstack o backend
+ Un front end con más de 5 años de experiencia y buen inglés gana arriba de 10mil dólares en negro en el extranjero
+
+-------

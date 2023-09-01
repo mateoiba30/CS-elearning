@@ -1,0 +1,7 @@
+nikto //nos muesrta las opciones de la herramienta
+nikto -host (url)//nos dice la ip del host de la página web, puerto del servidor que usa la página web, ellenguaje del backend, el OS del host
+si dice que el protector .... no está definido dignifica que puedo atacar por ese lado
+hace un escaneo de vulnerabilidades webs, hace un escaneo largo pero bueno
+hay veces que descubre el robots.txt
+
+no da vulnerabilidades muy específicas, pero es básico y bueno

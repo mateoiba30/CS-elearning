@@ -1,0 +1,5 @@
+clase 5)
+en metaisplotable, en linux:
+
+help	nos muestra lissta de comandos
+ifconfig	dice varias cosas, como el ip para atacarla

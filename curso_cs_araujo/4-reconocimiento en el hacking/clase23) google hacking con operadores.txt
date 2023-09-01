@@ -1,0 +1,9 @@
+buscamos info especifica mediante operadores=dorks
+
+inurl:google.com //estamos buscando mediante un operador plaginas que digan google.com en su url
+
+filetype pdf // busco paginas con archivos pdf
+
+intitle google // busco pags con google en el titulo web
+
+dorks sqli //estamos buscando operadores para encontrar paginas con vulnerabilidades de sql inyection

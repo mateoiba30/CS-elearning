@@ -1,0 +1,3 @@
+clase8) clonar maquinas: desde virtual box lo puedo hacer con click derecho. Por si sufre algún error
+mi VM, es más que nada para un backup.
+De manera simmilar la podemos eliminar, poniendo la opción de "solo borrar", no la de "eliminar todos los archivos"

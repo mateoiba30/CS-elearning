@@ -1,0 +1,17 @@
+el servicio HTTP es un servicio web sobre el que basan las webs del mundo
+El HTTP o HyperText Transfer Protocol es un protocolo de transferencia para el WWW
+Funciona como base para los intercambios de datos realizados en la web, y mantiene una estructura basadas en los clientes y servidores y orientada a transacciones.
+ste protocolo fue creado básicamente para la publicación de páginas en HTML, pertenece al grupo TCP/IP y es uno de los protocolos más extendidos en la actualidad.
+
+HTTP  y FTP no son lo mismo. Mientras que el primero nos permite acceder a una página web, el segundo se utiliza para comunicarse con el servidor y descargar o subir archivos al mismo.
+ambos son poco seguro y se busca migrar a https y sftp que etc
+
+nmap tiene muchos scripts para este protocolo, recordar que en una anterior clase explico dónde están guardados
+nmap --script-http-enum (ip del servidor o url)// enumera y mues
+si ataco al servidor del metasploitable2, voy a ver info e ir probando comandos
+
+hay scripts para ver si es vulnerable a cross, csrf, etc
+auth-finder //para ver si tiene alguna identificación, si tiene una más páginas hosteadas con sus respectivos urls
+headers// para buscar las respuestas que da el servidor al hacer una petición, como la fecha, el servidor, en lenguaje de la página, etc
+robots//para buscar el archivo llamado robots.txt
+hay scripts para wordpress, conocer los waf, cve para ver si ees vulnerable a diferentes vulnerabilidades, si es vulnerable a sql inyection, si es vulnerable a ataques de negación de servicios con slowloris, si son vulnerables a otros tipos de ataques y muchas cosas más

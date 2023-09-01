@@ -1,0 +1,5 @@
+clase13) introduccion al "recocnocimiento"
+
+es el obtener informacion de la víctima.
+pasivo: no se interactua con el sistema de la víctima. uso google, por medio de búsquedas, u otra fuente externa
+reconocimiento activo: lo contrario, como hacer un escaneo

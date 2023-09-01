@@ -1,0 +1,4 @@
+clase 10) direccion IP: Internet Protocol
+identificador al momento de entrar a internet de la computadora. tiene 4 octetos para identificarnos en la red.
+hay IP publicas y privadas.
+una dir publica identifica una red (para comunicarse entre redes), mientras que una privada identifica un dispositivo.

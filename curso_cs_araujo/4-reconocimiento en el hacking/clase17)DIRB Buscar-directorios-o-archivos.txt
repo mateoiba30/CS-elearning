@@ -1,0 +1,8 @@
+conviene buscar varios directorios, porque hayu más chances de encontrar un archivo que nos permita ingresar
+a la comútadora, o si la pag tiene una vulnerabilidad
+
+dirb viene con kali, para buscar archivos o directorios
+
+sudo dirb https://dominio.com archivo.txt
+
+sudo para ser superusuario y no tener algunos problemas, luego pongo ala url y al final un archivo de directorios posibels

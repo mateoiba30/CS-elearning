@@ -1,0 +1,3 @@
+nmap --script=vuln (ip del host) //busca vulnerabilidades conocidas de los  puertos lógicos
+nos da el CVE-id, nos indica otros puertos no vulnerables y sus servicios (suele indicar el puerto de smtp), etc
+lo normal es tener pocas o ningunas vulnerabilidades, excepto para máquinas metasploitables

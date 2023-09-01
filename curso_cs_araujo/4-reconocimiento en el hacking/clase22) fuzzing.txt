@@ -1,0 +1,21 @@
+fuzzing es enviar datos a un parametros y ver lo que nos devuleve
+usado para buscar archivos en una pagina web, descubrir y enumerar directorios o subdominios, etc
+se usa para descubrir directorios de una pagina web, que son como las secciones de la pagina
+
+ffuf -h para ver como usarlos
+
+-w para indicar una word list (word list para enumerar posibles directorios en una web)
+wordlist bastante popular: /usr/share/wordlist/dirb/big.txt dentro de la herramienta dirb con 20469 palabras
+ffuf -w wordlist_a_eleccion -u url_victima/FUZZ
+cada palabra de la wordlist la va reemplazando donde dice FUZZ
+
+para buscar archivos pongo FUZZ.formato
+ffuf -w wordlist_a_eleccion -u url_victima/FUZZ.php
+
+el codigo 200 es que se pudo accceder correctamente
+
+buscar subdominios (antes del dominio) 
+ffuf -w wordlist_a_eleccion -u https://FUZZ.google.com
+
+puedo fuzzear donde quiera, por ej: FUZZ.com
+

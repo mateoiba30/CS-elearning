@@ -1,0 +1,14 @@
+usando la herramienta Yphish que debo instalar en kali, desde github como siempre
+
+con la opcion de phishing puedo redirigir a gente a mi gusto luego de que clickeen donde quiero
+
+vamos a ver la opcion 2, la de reconocimiento para osint, luego a hay muchas más
+ 
+si tengo problemas para instalar carpetas como el error: fatal: could not create work tree dir 'Infoga': Permission denied  
+abrir la herramienta como super usuario poniendo "sudo" al principio
+
+sudo python3 YPhish.py, no olvidar de instalar los requerimientos si es necesario de cada herramienta
+
+la herramienta de FBI es de python 2.x, por lo cual la abro con  python2 fbi.py 
+en fbi, al escribir help me tira todas las acciones posibles
+antes de todo eso hay que logearse poniendo: token // y luego nuestro usuraio y contraseña

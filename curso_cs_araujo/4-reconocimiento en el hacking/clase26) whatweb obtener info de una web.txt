@@ -1,0 +1,9 @@
+whatweb https(url)
+si pongo -v antes de la url va a hacer un analisis mas complet
+
+whatweb -l para enlistar plugins //Un plugin es una aplicación o complemento a un código principal con el que se añaden funcionalidades extra y mejoras al funcionamiento de dicho código
+
+whatweb -a-3 url // escaneo de nivel 3 de agresividad
+
+whatweb -i archivo.txt // va a analizar todas las url dentro del archivo.txt
+con el comando leafpad puedo crear abrir textos rapido desde la terminal

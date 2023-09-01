@@ -1,0 +1,10 @@
+los directorios: enlaces a direcciones web de manera organizada (son independientes)
+
+tener directorios sirve para tener vectores de ataques ( medio a través del cual un hacker
+ malicioso puede hacerle llegar un malware a una víctima)
+
+la herramienta 'dirforcer' en python3 prueba (a fuerza bruta) posibles directorios
+
+python3 dirforcer.py -d https://google.com -w directorios.txt 
+-> devuelve direcciones válidas de la pag de google (o la que elija) dentro de los posibles subdominios 
+guardados en el txt

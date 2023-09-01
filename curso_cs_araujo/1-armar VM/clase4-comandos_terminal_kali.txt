@@ -1,0 +1,16 @@
+clase 4) comandos básicos kali linux terminal (similar a la git bash)
+
+ls	enumera carpetas y directorios que puedo moverme desde donde me encuentro
+cd nombreCarpeta 	(change directory) me muevo de carptea
+pwd	veo laa ruta de la carpeta en la que me encuentro
+cd ..	retrocedo una carpeta
+cat	ver contenido de archivo
+mkdir nombreC	creo nueva carpeta
+rmdir nombreC	(remove memory direction) elimino carpeta
+touch nombreA.extension	creo archivo, no carpeta
+cp nombreA.formato /ruta a copiar	(copy)copia archivo en una carpeta
+mv nombreA.formato /ruta a mover	(move) mueve archivo ahcia destino
+clear	limpia terminal
+git cloe dir-web	descarga algo desde una pag de internet
+nano archivo(existente o nuevo)	puedo editarlo, leerlo y más
+

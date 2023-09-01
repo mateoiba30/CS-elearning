@@ -1,0 +1,3 @@
+osint tecnicas para recopilar info publica.  Para un ataque de fuerza bruta o phising
+
+vamos a ver como sacar info de diferentes redes sociales

@@ -1,0 +1,15 @@
+para encontrar contrasenias que se filtraron
+
+con sudo pip install h8mail ya lo tengo
+
+h8mail //pongo esto y se activa la herramienta
+
+h8mail -h// para ver las opciones
+explora una base de datos para analizar claves
+
+h8mail -t email@gmail.com // devuelve claves que ese mail usó en distintos lognis
+por los cientos de datos que devuelve son posibles contraseñas
+estas palabras las puedo guardar en una wordlist para probar
+
+La clave de API es un identificador único que se utiliza para autenticar solicitudes asociadas a tu proyecto con fines de uso y facturación.
+la herramienta HIBP necesita una clave API, pero también hay varias herramietnas más como

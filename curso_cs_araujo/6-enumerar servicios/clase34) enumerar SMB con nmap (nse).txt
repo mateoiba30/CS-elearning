@@ -1,0 +1,13 @@
+SMB = samba, servicio/puerto que nos permite compartir datos en las redes
+podemos obtener info de cualquier tipo de lo que se comparte
+
+nmap/scripts //scripts(fragmento de código) para hacer un escaneo con nmap
+ip de la maquina metasploitable= 192.168.0.42
+
+nmap -sV 192.168.0.42 //escaneo puertos de mi otra VM, entre ellos el SMB
+hay scripts para SMBs, chequear si tiene cierto tipo de vulnarabilidades
+
+nmap --script=smb-enum-users 192.168.0.42 //tira todos los usuarios que encontró, sirve por ej para ataques de fuerza bruta
+nmap --script=smb-enum-shares 192.168.0.42 //muestra archivos compartidos y si los podemos leer o no
+también hay scripts para enumerar sesiones, servicios, procesos, grupos, dominios, SO, etc
+
