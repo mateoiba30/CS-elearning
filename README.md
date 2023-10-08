@@ -2,4 +2,4 @@
 
 Notes taken in courses, books, videos and other resources about Cybersecurity
 
-- [text notes: course_udemi_cs](course_cs_araujo/)
+- [text notes of _udemi_cs course](course_cs_araujo/)
