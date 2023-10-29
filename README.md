@@ -1,5 +1,5 @@
-# Ciber Seguridad
+# Cyber ​​Security
 
-Apuntes tomados en cursos, libros, videos y otros recursos acerca de CiberSeguridad
+Notes taken in courses, books, videos and other resources about Cybersecurity
 
-- [curso_udemi_cs](curso_cs_araujo/)
+- [text notes of _udemi_cs course](curso_cs_araujo/)
