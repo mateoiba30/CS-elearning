@@ -1,0 +1,94 @@
+DUDAS:
+como puede ser que un paquete transportado que usa TCP sin TLS puede llegar a estar encriptado? Esto es porque al ecriptarlo la primera vez ya es suficiente?
+en el ej 2 ii, porque usa el puerto 443? este puerto está reservado para el protocolo HTTPS pero nunca es mencionado. Esto pasa usando TLS o sin usarlo
+Usar TLS indica que es HTTP en lugar de HTTPS porqué no aclara el protocolo de la capa de aplicación?
+3b es correcto?
+4b porque interactuaba el ip de youtube con mi ip privado? no debería interactuar con el publico?
+
+funcionamiento de wireshark)
+wireshark recibe capturas de transporte de datos y puedo aplicar filtros como: (ip.src==190.188.234.171||ip.dst==190.188.234.171) para buscar las transferencias de ese IP y poder ver todos los paquetes de datos transferidos
+
+en la columna de procesos me aparece el 1er protocolo del modelo que usó. Esto es porque no se necesita pasar por todas las capas de los modelos de protocolos.
+Si me dice protocolo=HTTP no es que solo use HTTP, en la descripcion va a iniciar con HTTP y luego me muestra un protocolo de la capa siguiente (como TCP) y así hasta terminar (puede no llegar hasta la ultima capa de interfaz de red). Cada renglón describe un paquete, con lo cual abajo a la izquierda tengo la descripción con TODOS los protocolos usados para cada capa.
+
+más info)
+hay diferentes clases de IPs, mientras mayor es el tamaño de la red, se usa una clase con mayor Rango de posibles IPs
+
+algunos puertos estan definidos para ciertos protocolos, algunos importantes son:
+HTTP 80
+HTTPS 443
+SMTP 25
+
+las ips que inician con 10, 172 o 192 suelen ser privadas, igual en el 1er pdf se explica mejor
+
+encriptacion)
+la capa de aplicacion es la que se suele encargar de la encriptacion, ya que es en esta capa donde se proporcionan servicios para que el usuario pueda interactuar acorde con la máquina ya sea enviando correos y datos, visitando páginas web o descargando información. El TLS es parte de la capa de aplicacion (lo puedo ver en la descrpcion)
+si encripto en la capa de aplicacion puedo encriptar con TLS (es la que cifra los datos de texto plano a texto cifrado y viceversa.)
+
+2)
+La capa de aplicación define las aplicaciones de red y los servicios de Internet estándar que puede utilizar un usuario, es decir que elige modelos de protocolos (OSI, TCP/IP, etc). Estos servicios utilizan la capa de transporte para enviar y recibir datos.
+cada uno de estos modelos de protocolos (OSI y TCP/IP son los que vemos en el curso)
+A)
+I))
+a)diferentes maneras para saber si la transferencia esta encirptada: 
+-click derecho y poner follow para seguir el flujo
+-fijarme el protocolo que usa. Si usa HTTP se que no está encriptado, y si usa HTTPS si (por ejemplo)
+-abajo en la izquierda, en la descripcion, fijarme si la informacion es legible (lo de mas a la derecha fijarme, lo del medio es lo mismo en hexadecimal)
+
+b)TCP es parte de la capa de transporte del modelo de procesos TCP/IP
+protocolos de la capa de apicacion que están presentes (del modelo TCP/IP): HTTP
+protocolos de la capa de transporte que están presentes (del modelo TCP/IP): TCP
+
+c)como no está encriptada la info, al fijarme el contenido con follow encuentro que el host de la web es Host: www.ipensa.com
+es siempre el mismo porque filtré siempre el mismo ip
+
+d)en info dice los puertos que intervienen o tambien en la descripcion de mejor manera
+los puertos que participan son: 80 (puerto emisor o destinatario ya que la pag usa HTTP y puede pedir o recibir informacion) y el 45890 (correspondiente al puerto asignado para el servicio de IP 10.0.2.15, el cual siempre es quien se comunica con la página)
+
+recordar que los puertos de uso registrado van desde el 1024 al 49151, reservados para el uso de aplicaciones donde nuevamente cada número de puerto cumple siempre la misma tarea
+
+registrado no es lo mismo que bien conocido, porque los bien conocidos van del 0 al 1023, como el puerto 80 que siempre se usa para el servicio HTTP
+
+
+II)
+a)comunicacion encriptada
+b)protocolos de la capa de aplicacion: TLS
+protocolo de la capa de transporte: TCP
+c) desconozco la página web correspondiente al ip público 163.10.10.21, ya que la transmicion de paquetes está encriptada
+d)el puerto asociado a la página web es el 443, indicativo de que usa el protocolo HTTPS
+el puerto asociado al servidor con ip privado es el 56274 (recordar que los puertos dinámicos o privados van desde 49152 hasta 65535)
+
+B)
+I)ICMP, de la capa de transporte (como TCP).
+
+II)ICMP se encarga de transmitir mensajes de control y error entre dispositivos en una red IP. Esto significa que ICMP no tiene puertos de origen o destino en el sentido tradicional.
+
+III)el ip 8.8.8.8 es el IP de google, la cual es publica
+
+IV)No utiliza puertos como lo hacen los protocolos de la capa de transporte, como TCP y UDP. En su lugar, se identifica mediante el campo "Tipo" para cada tarea que realiza.
+
+C)los protocolos de la captura son: TCP, TLS, DNS, HTTP. Todos de la capa de aplicacion, excepto TCP. Como en la columna de protocol muestra el 1er protocolo usado del paquete en la transferencia, era de esperar que se vean solo protocolos de las primeras capas
+
+
+
+3)
+a) el unico protocolo que hay es el 802.11, que es un protocolo para redes inalambricas. Por lo general, la tecnología 802.11a no es compatible con otros protocolos de red. Los protocolos más antiguos no se utilizan en absoluto.
+
+b) los origenes y destino no son direcciones IP, ya que el protocolo indica que es para redes inalambricas, no necesariamente ligadas a internet (ej routers wifi, y puede usarse para mouses inalambricos pero no es normal)
+no son IPs, pero al igual que una IP, son identificadores de dispositivos o redes
+
+(BSSID) en origen, significa que el identificador corresponde a la direccion MAC de la estacoin de base de la red inalambrica
+(Broadcast) en el destino, indica que el paquete hay que difundirlo
+(RA)=recive adress
+
+b) como BSSID indica que corresponde a una direccion MAC, esto significa que estamos dentro del modelo OSI, en el nivel de enlace de datos
+
+4)
+protocolos al googlear youtube
+solo con poner youtube se transmitieron más de 1000 paquetes
+a)protocolos en la columna de procesos: DNS, QUIC (tipo de UDP), TCP, TLS, OCSP (capa de aplicacion del modelo TCP/IP)
+b)al principio aparece el IP privada de youtube, la cual interactuaba con el IP 10.0.2.15 mi ip privado privado
+
+5) en wireshark hacer una nueva captura arriba a la izquierda
+a)interactua mi IP privada con el IP de google al hacer ping
+es lógico que hayan protocolos de ICMP, los cuales evaluan el error en la conexion con las redes, lo cual es exactamente lo que hace el comando ping que yo estaba ejecutando en simultaneo

@@ -1,0 +1,15 @@
+dorks = comandos para buscar info especifica. se ponen en ek buscador de google, no en la terminal
+
+usado para hacking y otros labores
+
+averiguarlos en internet
+
+los mas sencillos:
+site: youtube.com hacking //busca info de hacking en youtube
+inurl: robots.txt //buscamos dentro de una url si tiene un archivo robot
+inurl: word1 word2 //puedo poner 2 palabras a buscar
+intitle //busca palabras en el título
+intext //busca tal palabra entre su contenido
+@leomessi //todas las redes sociales de leomessi (ese usuario)
+
+filetype: pdf hacking//muestra pags webs que tienen pedfs que mencionen hacking

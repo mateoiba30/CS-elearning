@@ -1,0 +1,11 @@
+1ro tener la ip victima
+
+nmap -sC -sV -T5 ip //enumero, ver version de servicios y hacer escaneo rapido
+
+vemos version de diferentes puertos
+
+searchsploit version // pruebo con las diferentes versiones si tienen vulnerabilidades, esto devuelve la ruta del codigo para explotar la vulnerabhilidad
+
+locate ruta //encuentro path absoluto del archivo
+
+python ruta_abs ip //si el codigo en este caso esta escrito en python hacerlo de esta manera, poniendo al final el ip victima

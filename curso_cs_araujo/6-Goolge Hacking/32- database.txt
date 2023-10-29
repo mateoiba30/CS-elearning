@@ -1,0 +1,5 @@
+google hacking database. database de dorks importantes para usar en google
+
+exploit-db.com con casi 8mil dorks diferentes, los puedo buscar con filtros
+
+intitle:index.of .bash_history //muestra el archivo bash_history = historial de la terminal

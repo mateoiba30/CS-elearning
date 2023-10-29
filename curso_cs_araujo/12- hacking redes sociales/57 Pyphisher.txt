@@ -1,0 +1,10 @@
+para funcionar, la aplicacion necesita dependencias
+ver pasos en http://github.com/KasRoudra/PyPhisher
+
+como se escribio la herramienta en python 3, entonces ejecutar haciendo python3 pyphisher.py
+poner que no tengo un local authoken
+elegir red social o app
+poner que no quiero poner un OTP
+poner enter cuando me pide un shadow url y tmabién cuando me pide un redirection url
+enter y genera los links de phishing
+inicializa el sistema con nosotros como host, con lo cual tengo entendido que si quiero hacer visible esta pagina fuera de mi red local debería usar una herramienta de port forwarding como lo es ngrok en el puerto 8080

@@ -1,0 +1,2 @@
+https://bitly.com
+ingresar link y nos devuelve uno mas corto que va a ser una URL mask, una vez que se aprieta el link corto se redirige al link largo

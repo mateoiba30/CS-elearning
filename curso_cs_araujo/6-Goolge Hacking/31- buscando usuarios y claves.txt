@@ -1,0 +1,9 @@
+filetype:log username admin //busco archivos del tipos log que mencionen esas palabras
+
+obtengo usuarios y contraseñas de servicios.
+
+dentro de la pag puedo hacer cntrl + f password
+
+filetype:log allintext:username password //hace lo mismo, pero en el archivo, en su texto diga esas palabras
+
+site:pastebin.com intext:username password //dentro de paginas webs que permitan subir archivos y contenido a los usuarios, buscar en texto las siguientes palabras

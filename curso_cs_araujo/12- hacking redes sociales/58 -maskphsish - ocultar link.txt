@@ -1,0 +1,8 @@
+herramienta que hace un URL mask
+descargar desde https://github.com/jaykali/maskphish
+como la erramienta es un .sh, entonces debo ejecutar con el comando bash
+
+pide un URL de phishing (lo hago con cualquier herramienta de las vistas en esta carpeta)
+ingresar el link al que me quiero parecer
+poner alguna palabra para agregar (ej support)
+

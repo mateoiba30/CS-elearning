@@ -1,0 +1,376 @@
+BÁSICOS
+de buena práctica iniciar poniendo #!/bin/bash. si pongo #!/bin/sh o cualquier cosa no me va a modificar los resultados
+de buena práctica los mensajes de errores redireccionarlos con >&2
+las variables dentro de los scripts son globales por defecto
+*.sh son los ejecutables y hay que chequear que tenga los permisos de ejecucion con [ -x ... ]
+cd	nombreCarpeta 	(change directory) me muevo de carptea en el sistema de archivos. Con .. retrocedo una carpeta en el sistema de archivos. Con ~usuario voy a la carpeta de archivos del usuario (si no pongo nada me lleva al que está activo ahora). cd /home/kali/archivo no se puede porque es un archivo, no una direccion. Poner ./carpeta indica buscar la carpeta dentro de mi directorio actual
+clear	limpia terminal
+ls	enumera carpetas y directorios que puedo moverme desde donde me encuentro. ls -l muestra propietario del archivo, con -a veo los archivos ocultos
+man	luego de poner man, pongo el comando o archivo que quiero saber como usar, similar a poner -h -help dependiendo de cada comando (-h podría llegar a ser una funcion aparte de mi comando)
+su - x	en x elijo el nombre de usuario con el cual conectarme al sistema, si no pongo  nada se asume root
+sudo	ejecutar como root el siguiente comando
+touch nombre	creo archivo, no carpeta
+/etc/passwd : nombre_usuario:x:UID:user_info:directorio_en_home:shell_login si la shell login es la bash, esta esta de la forma /bin/bash
+"*" mandar de esta manera los parametros con caracteres especiales
+si una variable puede tener un caracter especial, encerrarla con " " ej "*" "$1" "${arreglo[*]}"
+-----
+
+CONSEJOS BASICOS Y GENERALES
+1)scripts
+puedo asumir que recibo el path absoluto
+los scripts eliminan las variables que crearon al terminar
+bash -x archivo.sh	ejecuta y narra paso a paso lo que sucede
+chmod +x script.sh	me soluciona el problema cuando el script no escribe el arreglo con echo y problemas similares
+script.sh a b c //a, b y c son argumentos que recibe el script
+si un script devuelve en $? un valor !=0 es que hubo un error
+cuidado con poner comentarios en shell scripting porque puede traer errores si no separo el caracter de # de un caracter que ejevuta el script
+
+2)comandos
+la majoría de comandos que modifican archivos o ven carpetas del sistema necesitan la autorización del root
+para la mayoría de comandos que acepten '*' como un comodín, si quiero buscar algo con el comodín no debo usar las comillas dobles (")
+$(comando) es lo mismo que `comando` (pongo las comillas con AltGr } )
+algo recursivo significa que tmb lo hace dentro de las carpetas
+con flecha para arriba puedo ver los comandos que usé antes en la terminal
+cntrl + C corta la ejecución del comando actual
+
+3)comillas y variables
+${variable_1} //delimito nombre, usarlos siempre que el nombre tenga caracteres diferentes a numeros y letra
+"$variable_1" //para que funcione si recibe un caracter especial como *		$(variable_1) //NO ANDA porque primero analiza lo de adentro de los parentesis, lo cual no tiene significado porque no es un comando
+function "$variable" "hola" '*' # le paso 3 argumentos a mi funcion de shell scripting, notar el uso de ' ' para el caracter especial
+$(comando) es lo mismo que `comando` (pongo las comillas con AltGr } )
+y='500$x'	$x es interpretado como un simple string
+y="500$x"	$x es visto como una variable
+
+4)otros
+0 stdin, 1 stout, 2 stderr
+lista en bash: secuencia de valores separadas por un espacio
+las variables son globales por defecto y no las heredan los procesos hijos
+una variable no inicializada tiene como valor cero o nulo
+texto=$HOME/kali	#esta es la mejor forma de concatenar texto, no usar expr
+cuidado con el uso de () y {}. El primero delimita acciones como en matemática, y el segundo es para encerrar variables
+para asignarle un valor a una variable no hay que usar $. ejemplo: terminar=1; terminar=0.
+--------------------
+
+CONSEJOS VECTORES EN BASH (DENTRO DEL SCRIPT) -> NO VÁLIDO EN zsh
+poner * antes que @ en arreglos
+para simular una pila: agregar al final con a+=(x) y eliminar en la unltima posicion con pos=$(expr ${#a[*]} - 1); unset arrelgo[$pos]
+NO PASARLOS COMO PARAMETROS, aprovechar que son variables globales
+
+1)inicializar
+si pongo un espacio entre el nombre del arreglo y el '=' entonces el codigo no va a andar
+inicia vacío o le ingreso texto separados por espacios (no necesario poner comillas si es un texto sin espacios).
+arreglo=("1 2" 3) tiene 2 elementos
+arreglo=("1 2 3") tienen 1 elemento
+arrelgo="1 2 3" tiene 1 elemento
+arreglo="1 2" 3 error de sintaxis
+vector=({1..10})	inicializa con los valores de 1 a 10. Esto funciona bien, no es como seq
+arreglo=($comando)	carga la salida del comando en cada posicion separando por espacios. ej: arreglo=($(echo "$arreglo2[* o @]"})), arreglo=(${arreglo2[* o @]}) cargan cada elemento en cada posicion del arreglo nuevo. el único problema es que al elemento "1 2" lo va a cargar como 2 elementos separados. La única copia segura es con un for
+arreglo=$comando	carga en la 1ra posicion 1 string que es la salida del comando. ej arreglo=$(echo "$arreglo2[* o @]"}), arreglo=${arreglo2[* o @]} cargan en el primer elemento de arreglo un string. el echo con comillas o sin comillas es lo mismo
+
+2)pasar parametros
+bash ./sript.sh [...] 
+"1 2 3" o "${arreglo[*]}" pasa como parametro string (los elementos de strings como espacios se separan). El usar comillas ayuda a que no se confunda con más parametros. No es recomendado hacerlo, aprovechar que es una variable global
+${arreglo[*]} o ${arreglo[@]} o "${arreglo[*]}" pasa solo el 1er elemento del arreglo como texto
+
+3)acceder contenido
+los índices inician con 0, si indico una posicion inválida simplemente imprime vacío
+${arreglo_nombre[1]} para acceder al valor de la pos 1
+${!arreglo[*]}	devuleve SOLO los indices de los elementos separados por espacios
+arreglo=  o echo $arreglo	uso el valor del 1er elemento del arreglo
+${arrelgo[*]}			uso el valor de todo el arreglo
+arreglo_nombre[*] es lo mismo que arreglo_nombre[@] y es para elegir todos los elementos del arreglo
+
+4)tamaño
+${#arreglo[x]}	longitud del elemento x
+${#arreglo_nombre[* o @]} me devuelve el tamaño del arreglo.
+
+5)agregar o eliminar
+arreglo+=3	concatena el 3 con el 1er elemento de arreglo, sigue habiendo la misma cant de elementos. según ISO no es un comando válido
+arreglo+=(3), me pone el numero 3 al final del arreglo, modifica ${#arreglo[*]}
+unset arreglo[2]	no es unset ${arreglo[2]}. cambia por un espacioa al elemento del índice indicado para cuadno se muestra, cambia el valor de ${#arreglo[*]}
+mi_arreglo=($(echo "${mi_arreglo[@ o *]}" | sed "s/$elemento_a_eliminar//g"))	esto elimina TODOS los elementos con ese valor (no elimina por posicion NUNCA), hace el corrimiento y modifica ${#mi_arreglo[*]}. solo puedo mandar una variable sin ir entre corchetes, no puedo mandar sed "s/${arreglo[1]}//g", hacer 1ro variable=${arreglo[1]} y luego sed "s/$variable//g"
+
+5)for
+Recordar que en un for( hay que hacer for variable in ${arrelgo[*]}; do ...; done).
+a=("1 2" 3); for i in ${a[* o @]}; do echo $i; done		imprime 1, 2, 3 -> muy recomendado para usar con arreglos que tienen un elemento que es un string separado por espacios como en las pilas
+for i in "1 2" 3; do echo $i; done	imprime 1 2, 3
+la unica manera de imprimir cada elemento por linea aunque hayan elementos que sean strings con espacios es haciendo un for del estilo en C sin ir a ninguna funcion, porque al pasar el arreglo como parametro se pasa como texto
+
+--------
+
+CONSEJOS CONDICIONES
+! [ .. ] para negar
+(test -f archivo && grep menta archivo && echo Z) || echo Q	primero hace [ -f archivo ] luego hace los siguientes comandos, sea falso o verdadero. ejecuta Q solo si falla lo anterior, lo que significa que nunca imprime Q porque el comando anterior no puede fallar (sea falso o verdadero al inicio)
+[ condicion ] es lo mismo que test condicion. ejemplo: if [ -f ./archivo.txt ] es lo mismo que poner if test -f ./archivo.txt
+es lo que va en casi todas las estructuras, tmb se puede escribir como: test condicion.
+no olvidar de separar todo con espacios.
+puedo comparar por strings (= != > >= < <=), poner = es lo mismo que ==
+archivo.txt =~ "hola" chequea si dice hola en algun lado del stringn o archivo (en este caso)
+luego del '=' separarlo con espacios del resto
+puedo comparar numeros (como hace expr) como numeros (-eq -ne -gt -ge -lt -le). [ 5 -ge 20 ] es falso porque el número 20 es mayor, pero test 5 > 20 es verdadero porque el string 5 inicia con un valor superior al valor 20. gt grather than, ge grather equal, l less
+si hago if [ -e archivo.txt ] me fijo si es un archivo o directorio existente. -d para ver si el directorio existe o -w para ver si se le puede escribir y existe. -f para saber si existe el archivo desde el directorio actual (para buscar desde / usar find o buscar una ruta absoluta con la condicion). -z para verificar si el parametro está vacío. -r si se puede leer y existe, -w para saber si existe y se le puede escribir,-x para saber si se puede ejecutar y existe. si pongo como condicion un string, se ira al caso true.
+no se puede usar el operador %
+--------
+
+PARA PROGRAMAR ver principalmente los títulos de:
+1) REDIRECCIÓN EJECUCIÓN
+2) VARIABLES SALIDA SHELL SCRIPTS
+3) ARCHIVOS
+4) ARCHIVOS DE TEXTO
+5) ESTRUCUTRAS DE CONTROL
+6) otros comandos como: bash (necesario si el script no está dentro de las rutas indicadas por el path)
+
+--------------------------COMANDOS EN ORDEN ALFABETICO-------------------------------------------------
+
+ARCHIVOS
+basename $directorio	se queda con el nombre del archivo y la extension de la ruta absoluta
+chmod	u+rw	rwx 2^2 2^1 2^0. Read write and exetuce = 7. gestiona permisos de usuarios, en este ejemplo le permite leer y escribhir al propietario. U propietario, G grupo propietario, O otros. chomd 775 da todos los permisos a U y G, pero no puede escribir los O. u+rwx u=rwx es lo mismo
+chown nuevo_prop archivo	cambia el propietario de un archivo, entre otras funciones
+chgrp -R nuevo_grupo dirección	cambia grupo o directorio de archivo, en este ejemplo modifica el grupo
+cp /archivo /destino	(copy)copia archivo o carpeta en una carpeta. En destino puedo cambiarle el nombre al nuevo archivo. cp -R /home/invitado/* /home/ copia todos los archivos y carpetas y archivos dentro de carpetas en /home/invitado y lo lleva a home (en realidad no es necesario el * porque ya indico que es recursivo)
+file	para decir que tipo de archivo es basandose en estructura, también indica el tipos MIME (identificador de formatos), arquitecturas bianrias, etc (no muestra el contenido del archivo)
+find hola *	busca los archivos que digan "hola" en alguna parte de su nombre, tiene otras funciones más con respecto a locate. find / -type d -name *.so (verifica que sea directorio, con f verifica que sea archivo). find / -name "hola" (NO OLVIDAR COMILLAS) busca todos los archivos desde '/' que tengan hola en su nombre. tmb puede buscar por peso, fecha, tipo, etc. Por defecto busca recursivamente, pero si pongo -maxdepth X elijo en cuantos directorios bajar. find . -maxdepth 1 -type f busca archivos solo en la posicion actual. si al final pongo -perm -xxx filtro segun los premisos en octal 
+grep "a"	grep "^a" busca que inicie con a. ejemplo donde busca los archivos que contengan "a" en su nombre, si uso -w buscaría los que se llamen solamente "a". grep 'a' es lo mismo que grep "a" es lo mismo que grep a
+locate	similar a find, busca archivos en base a su nombre. Es más rápido pero puede no buscar en la última actualización de los archivos
+ln archivo archivo_enlace	crea link a un archivo. En el ejemplo estoy agregando un nuevo path que me lleva al mismo archivo, pero si uso ln -s entonces el nuevo archivo contiene un puntero al archivo anterior
+ls	enumera carpetas y directorios que puedo moverme desde donde me encuentro. ls -l muestra propietario del archivod, permisos, etc; con -a veo los archivos ocultos
+mv /rutaorigen /rutaamover	(move) mueve archivo hacia destino, podemoa mover con otro nombre para renombrar. Si desp de origen pongo *, entonces estoy moviendo todo lo que se encuentre en ese directorio
+rm archivo	elimina/remueve el archivo, si pongo rm * elimina todo archivio del directorio actual. rm -r carpeta para eliminarla a ella y su contenido
+touch nombre	creo archivo, no carpeta
+
+ARCHIVOS DE TEXTO TEXTO
+awk -F'caracter_delimitador' '{print NF}' archivo	cuenta campos delimitados por un caracter, muy util con cut
+cat archivo.txt		NO ANALIZA TEXTO, ver contenido de archivo, concatenar y más funciones sin poder ver el texto mientras modifico el archivo
+cut -d 'x' -fy archivo.txt	extrae el campo nro 'y', donde los campos son separados por el caracter 'x' dentro del archivo.txt. -f 1,5 extrae el campo 1 y el campo 5 y las separa con un espacio. Otra opcion cut -d'x' --complement -fy archivo.txt  (extrae todos los campos menos los que daría el comando -d). (tal vez no necesario usar las comillas simples para determinar el caracter x). No es necesario operar con un archivo, le puede llegar un string de una variable
+expr arg1 op arg2	permite hacer operaciones básicas como + - \* (2 caracteres necesarios para multiplicar) / : (concatena cadenas, no conviene usarla) % (módulo). ejemplo resultado=$(expr 5 + $variable). No recomendado para concatenar texto
+grep "a" archivo.txt	tmb explicado arriba. puedo hacer cat archivo.txt | grep "a". busca la palabra a dentro del archivo, no en el nombre del archivo. Tal vez no le gusta si busco un texto que inicie con '-'. grep -v '/' muestra todas las lineas que NO contengan '/' //util para buscar archivos y carpetas
+head	muestra las primeras líneas de un archivo
+mcedit	editor de textos más visual, similar a otros como more
+more	muestra archivos d  texto de manera controlada, mostrando 1 pantalla a la vez
+nano archivo(existente o nuevo)	puedo editarlo, leerlo y más
+rev	invierte cadena de texto, util para usar con cut
+sed -n '5,10p' archivo.txt	imprime desde la linea 5 hasta la 10. sed 's/patron/reemplazo/' archivo		Busca un patrón en un archivo y lo reemplaza con el texto especificado, si pongo al final //g significa que no reemplazo por nada y g significa que lo hace todas las veces que encuentra el patron ver apartado de arreglos
+sort archivo.txt	reordena alfabeticamente las líneas de un archivo. -n para orden numérico, -r para orden reverso. si pongo sort -n -r -o numeros_ordenados.txt numeros.txt ordenar líneas numéricamente en orden inverso en un archivo llamado numeros.txt y guardar el resultado en un nuevo archivo llamado numeros_ordenados.txt
+tail	muestra en pantalla las últimas líneas de un archivo
+tr opción 'caracts_entrada' 'caracts_salida'	comando que procesa texto. tr 'aeiou' 'AEIOU' //reemplaza las vocales minusculas por las mayúsculas. con -d 'x' elimina todos los caracteres x. tr -s 'hola' elimina la oracion ingresada cuando la encuentra.'[:lower:]' es lo mismo que poner todo el abecedario en minusculas o poner 'a-z' y hay más conjuntos para facilitar las tareas. Solo puedo hacer 1 intercambio a la vez, si quiero puedo hacer  tr '[:lower:][:upper:]' '[:upper:][:lower:]' que intercambia maysuculas por minusculas y viceversa
+vi	editor de texto, apretando esx dejo de escribir para poner comandos como :wq que es para guardar y salir y es el editor con más potencial. Debo usar sudo si no me deja escribir en el archivo. v entra en modo visual, luego y copia lo seleccionado, p pega lo copiado
+wc archivo.txt	NO ANALIZA TEXTO, -l cuenta lineas, -m cuenta caracteres, -c cuenta bytes. devuleve un numero y el nombre del archivo separado por un espacio. Si no paso parametros devuleve lineas palabras bytes nombre_archivo
+zgrep "algo" archivo.txt.gz	grep de archivos comprimidos, busca el patron dentro del archivo
+
+APAGAR Y REINICIAR
+halt	detiene el sistema
+reboot	reinicia el sistema, no tiene parámetros
+shutdown	apaga o reinicia sistemas, archivos o programas. si pongo -h no es para ayuda, así me apaga el sistema, entre otras funciones
+
+BASE DE DATOS
+getent base_de_datos clave	consulta bases de datos de claves (nombres de usuario, nombre de grupos, nombre de archivos, etc). getent passwd muestra más info que cat /etc/passwd, porque este segundo comando no accede a la base de datos
+
+COMPRIMIR EMPAQUETAR
+gzip archivo.txt	comprime el archivo en archivo.txt.gz, me lo modifica al archivo, no crea uno nuevo. gzip -d archivo.tar.gz # Descomprime archivo.tar
+tar -cvf paquete_nombre.tar archivo1 archivo2 directorio //empaqueta todo en paquete.	tar permite empaquetar (agrupar en un mismo archivo) archivos o directorios. Si pongo -czvf paquete.tar.gz arch1 arch2 arch3, se comprime con gzip, si pongo paquete.tar.bz2 se comprime con bzip2. c crea archivo tar, v muestra detalles verbales del proceso, f especifica el nombre del archivo tar. tar -xvf paquete.tar -C destino		despempaqueta, si es un .tar.gz usar la opcion -xzvf
+zgrep "algo" archivo.txt.gz	grep de archivos comprimidos, busca el patron dentro del archivo
+
+CONDICIONES
+&&	and, lo que en verdad hace es ejecutar un comando una vez finalizado el 1ro y sin tener error: comando1 && comando2
+||	or, comando1 || comando2	comando2 solo se ejecuta si falla el comando1
+!	not	! [ .. ]
+[ condicion ]	explicado al inicio
+expr nro op nro		puedo evaluar condiciones con numeros, puedo usar = != \> \>= etc..
+true	puedo hacer un while infinito haciendo while true; do ...; done
+
+DESCARGAR
+git cloe dir-web	descarga algo desde una pag de internet
+
+DISCOS
+df	dice la cantidad de espacio libre en el disco. Si pongo -h me la muestra en GB
+fdisk	administrar particiones de discos, usar con mucho cuidado
+hdparm	configura y gestiona HDD y SSD, hdparm -I /dev/sdX (X indica el nro de unidad=particion a consultar, el poner -I indica que inspecciona sin modificar nada), hdparm -tT /dev/sdX (-t indica prueba el rendimiento de la unidad=particion a analizar), hdparm -t --direct --offset 500 /dev/sda (--direct indica que no se va a testear con la ayuda de la cache sino que se usa el módulo DMA, --offset 500 indica que analizarmos a partir de 500 GB para no tener en cuenta el MBR y otras cosas vitales del SO que andan mas lento), sudo echo "noop" > /sys/block/sda/queue/scheduler (cambia de scheduler a noop en lugar de deadline)
+DISPOSITIVOS PCI
+lspci	muestra info de sistemas pci conectados
+
+ESTRUCTURAS DE CONTROL
+break	sale del bucle, UN IF NO ES UN BUCLE. break [5] no corta 5 bucles seguidos, lo que hace es que hace break en 5 bucles anidados atrás (retrocedo de bucle y le hago break al bucle que contenía otros bucles adentro)
+continue	salta solo 1 iteracion del bucle (como en C). continue [5] no salta 5 iteraciones del bucle, lo que hace es que hace continue en 5 bucles anidados atrás (retrocedo de bucle y le hago continue al bucle que contenía otros bucles adentro)
+---
+case $variable in
+"valor 1")
+#codigo
+;;
+"valor 2")
+#codigo
+;;
+esac
+---
+for ((i=0; i< 10; i++)) //ambos for tienen consejos escritos en la parte de arreglos. con ${!i} puedo recorrer entre todos los parametros pasados con i=1; i<=$#
+do
+#codigo
+done
+---
+for i in value1 value2 value3; //i no es el indice, vale cada valor en cada pasada
+do				//si pongo for i; do ...; done se asume que es un for i in $@; do ...; done
+#codigo
+done
+---
+if [ condicion ]
+then
+#codigo
+else
+#codigo
+fi
+---
+select option in uno dos tres exit
+do
+#la variable $option vale "uno" si ingreso 1, "dos" si ingreso 2, "tres" si ingreso 3, "exit" si ingreso 4 (es texto, no termina el bucle). Generalmente usado con un case adentro, muestra de manera visual las opciones
+done
+---
+until [ condicion ]
+do 
+#codigo
+done
+---
+while [ condicion ]
+do
+#codigo
+done
+---
+
+FUNCIONES
+function nombre_funcion { #codigo# }	declaro una funcion dentro de un script. ahora el nombre de mi funcion lo puedo usar como si fuera un comando más en la terminal
+numbre_funcion() { #codigo# }	lo mismo que function, nunca pongo nada dentro de los paréntesis
+return	forma de una funcion para devulver un valor que queda en $?. es como el exit pero para las funciones. si no quiero usar return puedo hacer variable=$(funcion)
+nombre_funcion "1 2 3"	estoy invocando a la funcion y le estoy enviando un arreglo.
+$1 dentro de la funcion es la 1er variable enviada a la funcion, no al script
+no pasa nada si le mando parametros demas a mi funcion
+local variable hago una variable local a la funcion. por defecto las variables son globales
+
+INFORMACIÓN DE COMANDOS
+man	luego de poner man, pongo el comando o archivo que quiero saber como usar, similar a poner -h -help dependiendo de cada comando (-h podría llegar a ser una funcion aparte de mi comando)
+man bash	describe operacionesinternas, como para encontrar el for, case, etc
+info	como man, pero más moderno
+
+Internet
+ifconfig	da mucha informacion acerca del IP y las conexiones
+curl ifconfig.me	devuelve unicamente mi IP publica
+KERNEL
+dmsdeg	muestra el registro del kernel
+ping ip	evalua el retardo en milisegundos al conectarme a cierta red (mide el IP)
+
+LOOP BACK (dispositivo que permite acceder y trabajar con archivos como si fueran unidades de almacenamiento físicas)
+losetup
+
+NUMEROS
+expr arg1 op arg2	expr n = echo $n. permite hacer operaciones básicas como + - \* (ambos caracteres necesarios para multiplicar) / : (concatena cadenas,  no conviene usarla) % (módulo). ejemplo resultado=$(expr 5 + $variable)
+seq opciones(opcional) n1 incremento(opcional) n2	genera secuencia de numeros. seq 1 10 genera los numero del 1 al 10 separados por espacios (al mandar esto a un vector guarda los espacios). seq 0 10 100 genera del 0 al cien avanzando de a diez. seq -s x 1 10 genera del 1 al diez separados por comas. con -w genera la secuencia inversa, etc
+
+PROCESOS ARRANQUE JOBS BOOT RUNLEVELS 
+(comando) &	ejecuto el comando en segundo plano, lo cual me libera la terminal de ese comando
+atop	similar a top y htop, es la herramienta con más info, que tmb analiza el histarial de los procesos
+bg %X	X es el job number de un proceso que actualmente se encuentra suspendido y que quiero mandar en BackGround = segundo Plano
+fg %X	es el job number de un proceso que actualmente se encuentra suspendido y que quiero mandar en Foreground, ahora me bloquea la terminal ese proceso
+htop	como el comando top, pero con mejor interfaz y más funciones
+init X	cambio al runlevel X, cambio no permanente
+kill opcion PID		termina de manera controlada cierto proceso, o le hace otra cosa similar (si no pongo opción entonces se elimina de manera normal)
+killall opcion PID	si pongo killall httpd, me termina todos los proocesos con ese nombre de manera normal. killall -u kali me elimina todos los procesos del ususario kali
+pgrep nombre_proceso	como combinar ps y grep, filtra procesos según el nombre
+pidof nombre_proceso	como top + grep, filtra procersos según el nombre e informa PID, entre otras cosas
+pkill	 terminar procesos en función de su nombre o atributos y quieres realizar una terminación en masa. parecido a kill, pero lo uso si desconozco el PID
+ps	indica procesos ejecutandose actualmente. ps aux	devuelve todos los procesos
+pstree	muestra el árbol de procesos necesarios para el inicio del SO con el nombre del proceso y su PID (process ID)
+renice -n prioridad -p PID	cambiar la prioridad de ejecución de un proceso 
+systemctl 	administra los jobs en los runlevels
+top	lista de procesos actuales con su consumo, PID, comando, etc
+xkill	 para terminar de manera inmediata cualquier ventana o aplicación en un entorno de escritorio X Window System (interfaces gráfica). las siguientes ventanas que clickeé van a cerrarse a la fuerza, para salir debo pulsar cualquier tecla
+
+RED
+netstat	muestra info de las conexiones a la red, tablas de enrutamiento, etc
+
+REDIRECCIÓN EJECUCIÓN
+la salida de error estandar suele ser el monitor
+;	poner varios comandos en una misma línea
+|	conecta la salida estandar de un comando con la entrada estandar del segundo comando (nada de archivos). se llama pipe = tubería
+>	redireccion de salida hacia un archivo (no hacia un comando), de manera destructiva, si no existe el archivo entoncees lo crea
+>>	redirección de salida hacia un archivo (no hacia un comando), de manera no destructiva, si no existe el archivo entoncees lo crea
+<	redirección de entrada estándar. el archivo pasa a ser la entrada del siguiente comando (comando < archivo)
+2>	redirecciona errores estándar hacia un archivo, de manera destructiva
+2>>	redirecciona errores estándar hacia un archivo, de manera no destructiva
+2>&1	redirecciona salida y error estándar hacia un mismo destino
+&>	redirecciona salida y error estándar hacia un mismo destino (idéntico al comando de arriba)
+>&2	redirecciona lo de la salida (con o sin error) estandar hacia la salida de error estandar, no a un archivo
+at	para postergar la ejecucion de comandos
+sleep x espera x segundos
+nice opcion comando	limita tiempo o recursos de un comando. con +10 le bajo la prioridad a un proceso
+
+SISTEMAS DE ARCHIVOS CARPETAS
+..	para subir de jerarquía de directorios. ls > ../../archivo sube 2 categorías
+.	es lo mismo que ./ y me indica que trabajo en el directorio actual
+.archivo	es un archivo oculto
+cd	nombreCarpeta 	(change directory) me muevo de carptea en el sistema de archivos. cd ..	retrocedo una carpeta en el sistema de archivos. cd ~ es lo mismo que poner cd $HOME. ../
+cp archivo destino	(copy)copia archivo o carpeta en una carpeta. cp -R /home/invitado/* /home/ copia todos los archivos y carpetas y archivos dentro de carpetas en /home/invitado y lo lleva a home. cp a1 a2 a3 destino/	puedo copiar varios archivos hacia un destino, pero si los quiero renombrar lo tengo que hacer en comandos separados
+mfks	crea sistemas de archivos, usar con cuidadocle
+mkdir nombreC	creo nueva carpeta
+mount	para montar sistemas de archivos en directorios
+pwd	indica el full path actual
+rm -r carpeta para eliminarla a ella y su contenido
+rmdir nombreC	(remove memory direction) elimino carpeta 
+umount	desmonta sistema de archivos en directorios, lo que hace que no sea accesible por nadie, pero la info sigue estando (me aseguro que no sea modificada)
+
+SISTEMA USUARIOS GRUPOS
+adduser pepe	agrega el usuario pepe, pero no de manera automáica como useradd, yo puedo elegir clave, carpeta del usuario, clave, etc
+chmod	rwx 2^2 2^1 2^0. Read write and exetuce = 7. u+rw archivo_o_directorio	gestiona permisos de usuarios, en este ejemplo le permite leer y escribhir al propietario. U propietario, G grupo propietario, O otros. chomd 775 da todos los permisos a U y G, pero no puede escribir los O. -R para recursivo. Para leer los permisos usar ls -l. chmod +x script.sh	me soluciona el problema cuando el script no escribe el arreglo con echo y problemas similares
+chown nuevo_prop:nuevo_grupo archivo	cambia el propietario de un archivo y grupo (nombre o ida de grupo existente). si solo quiero cambiar usuario sacar la parte ':nuevo_grupo'
+chgrp -R nuevo_grupo dirección	cambia grupo o directorio de archivo, en este ejemplo modifica el grupo
+groupadd	agrega grupo al sistema
+groupdel	elimina grupo
+ls	enumera carpetas y directorios que puedo moverme desde donde me encuentro. ls -l muestra propietario del archivo
+passwd	nombre_usuario	asigna o cambia clave en etc/shadow, entre otras funciones. Tmb sunciona para el root
+su - x	en x elijo el nombre de usuario con el cual conectarme al sistema, si no pongo  nada se asume root
+sudo	ejecutar como root el siguiente comando
+uname	muestra info del sistema (SO, kernel, etc)
+useradd	-d /home/pepe_files pepe	crea a pepe y guarda su info en esa ruta. este comando es lo mimsmo que adduser, agrega usuarios, modifica claves. Si uso -m el porceso se automatiza y crea una carpeta en home con el nombre del usuario
+userdel	elimina usuario
+usermod	-a -G grupo1 pepe	cambia grupo. Tmb sirve para cambiar de home, grupos adicionales (mejor que modificar el etc/group). usermod -d /home/invitado invitado ;hace que el usuario 'invitado' ahora guarde su informacion en la carpeta asignada
+users	devuelve los nombres de usuarios conectados, menos info que en el who
+who	verifica usuarios conectados al sistema actualmente (nombre	terminal	fecha hora)
+write usuario tty(el nombre de la terminal)	para escribirle a otros usuarios, apretar cntrl + D para enviar
+
+TERMINAL
+bash script.sh	ejecuta el script si está dentro de los directorias del path. Si el script no está ahí debo mover si posición en cualquier directorio del path o poner bash ./script.sh //pongo la ruta absoluta o relativa para que sepa llegar al script. bash -x indica cada comando que ejecuta y da info en general (bueno para depurar)
+bg %X	X es el job number de un proceso que actualmente se encuentra suspendido y que quiero mandar en BackGround = segundo Plano
+comando &	ejecuto el comando en segundo plano, lo cual me libera la terminal de ese comando
+clear	limpia terminal
+fg %X	es el job number de un proceso que actualmente se encuentra suspendido y que quiero mandar en Foreground, ahora me bloquea la terminal ese proceso
+tty	dice el nombre de la terminal (no relacionada con el nombre de usuario)
+
+UBICACION
+pwd	veo laa ruta de la carpeta en la que me encuentro. hay veces que sol funciona con `pwd` y no con $(pwd)
+which	para determinar ubicacion de un comando en el sistema
+
+VARIABLES SALIDA ARGUMENTOS DE SCRIPTS O FUNCIONES
+#	comentario
+$0	contiene nombre del script
+$x	con $1 accedo al er parametro que recibió el script o funcion
+$#	contidad de argumentos recibidos por parte del script
+$* = $@	lista de argumentos del script, sirve para referenciar a todos los argumentos o para verlos todos separados entre espacios. for i in $*; do $i ...; done //voy operando en cada iteracion con los diferentes argumentos $1, $2, $3, etc. for ((i=0; i<$#; i++)); do $($i) ESTA MAL. le puedo hacer echo y muestra la lista de parametros pasados la script
+$?	valor que retornó el último comando/script/funcion ejecutado. 0 si estuvo bien, entre 1 y 255 si hubo algún error. Cuando hago un nuevo script pierdo el valor del $? anterior, con lo cual conviene guardarlo en una variable
+${variable1}	es lo mismo que poner $variable1, sirve para acceder al contenido de la misma
+$(comando)	sustitucion de comando, en otras versiones es como poner `comando` (no son las comillas simples), y lo que hace es quedarme con la salida del comando. La primer opción permite anidar comandos. puedo poner varios comandos dentro de los paréntesis. 
+$HOME	variable con el pwd del directorio de archivos del usuario que lo ejecuta (ej $HOME = /home/kali = cd ~)
+$path	variable con las diferentes rutas donde el sistema busca ejecutables y comandos al escribir un comando, separadas por esapcios
+$PATH	como path, pero separa los directorios con ':'
+$PWD	variable con el contenido del comando pwd, que es la ruta absoluta donde estoy actualmente
+${!variable1}	no existe hacer $($variable), por eso SOLO para este caso: estoy accediendo al contenido de la variable2, cuyo nombre está guardado en variable1 (variable1="variable2"). Al poner ${...} debo poner el nombre de una variable, no puedo poner un comando o el resultado de consultar una variable, o el resultado de un comando u otra cosa (debo poner el nombre de una variable existente)
+arreglo_nombre=()	(escrito al inicio del documento su info)
+echo "hola"	echo $n = expr n. muestra hola en pantalla. si no pongo las comillas, por cada separacion de espacios lo toma como un parametro diferente, con comillas lo toma como uno solo. echo hola $variable #está bien. echo hola variable #está mal, necesita comillas. echo '$variable' imprime $variable #literalmente eso, no el contenido
+exit	finaliza el script en ejecución. exit x cambia el valor de retorno del script a x (cambia el valor en $?) y termina el script. exit status imprime el valor de $? (como hacer echo $?)
+export variable1	hace que la variable la hereden los procesos hijos, ahora variable1 es una variable de entorno. si solo pongo export, me muestra la lista de variables de entorno actualmente en el sistema
+local nombre_variable	hace que mi variable sea local a una funcion. sinó, por defecto son globales
+read	variable	lee por teclado y guarda lo recibido en la variable llamada 'variable'. Lee hasta un salto de línea lo que le va a ingresar a la variable
+variable_nombre="pepe"	creo variable y le pongo el valor de 'pepe', sin espacios, no necesarias las comillas a menos que hayan espacios. lo mismo usar "" o ''
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+workshops=eventos importantes
+se hacen buenos contactos
+
+meetup de comunidades
+ekoparty
+darle atencion a comunidades de developers
+
+hackercamp en las vegas (eeuu), en una misma semana:
+defcon, bien técnico
+bsides
+black hat
+
+------------------
+
+prestarle atención a cursos, CTF, charlas, workshop/eventos

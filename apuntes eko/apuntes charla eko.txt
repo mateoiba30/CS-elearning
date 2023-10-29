@@ -1,0 +1,48 @@
+hay mucho trabajo remoto debido a la gran demanda
+
+-----
+
+workshops=eventos importantes
+se hacen buenos contactos
+
+meetup de comunidades
+ekoparty
+darle atencion a comunidades de developers
+
+hackercamp en las vegas (eeuu), en una misma semana:
+defcon, bien técnico
+bsides
+black hat
+
+------------------
+
+prestarle atención a cursos, CTF, charlas, workshop/eventos
+
+--------------------
+
+pentesting: phishing, vishing (te hablan y te engañan => voice ), smishing (con sms o whatsapp), físico (hacerte pasar por tal y tocar las computadoras)
+
+----
+día a día: estar actualizado con las novedades siempre
+planificar, concientizar, hacer informes, testeos, etc
+
+---------
+
+que buscan las empresas?
+depende mucho de la necesidad de la empresa.
+algunas contratan juniors para desarrollar con gran potencial el área
+otros buscan seniors para tener un buen equipo de manera rápida. Masters no se suelen pedir, es raro, las certificaciones sirven más
+está bueno conseguir un trabajo junior para poder empezar con algo básico y entender las bases
+1ro aprender las bases en cursos gratis y baratos, y luego irme espacializando con los cursos caros
+subir mis cosas en github
+aprovechar que hay mucha demanda, presentarme a varias ofertas que me gusten
+
+hay cursos en linkedin, udemy, ekoparty, cisco (CSNA por ej), etc
+-----------
+
+averiguar lo que es IAM, SOc, help desk
+
+--------------
+
+la univ de vicente lopez te beca el año que viene la diplo en ciberseguridad con UTN excelente nivel (5 meses, convenio con la UTN)
+hoy abrió la inscripción para la tecnicatura en ciberseguridad (terciario y gratis) en la UNSO (tmb con muchos convenios, pero lo malo es que es presencial)

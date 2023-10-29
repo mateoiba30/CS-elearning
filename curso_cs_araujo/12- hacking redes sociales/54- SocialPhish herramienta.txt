@@ -1,0 +1,16 @@
+ataques de phishing con SocialPhish
+
+instalar:
+git clone https://github.com/pvanfas/socialphish.git
+cd $(find / -d -name "socialphish" 2>> archivoErrores.txt ) //hecho por mi
+chmod +x socialphish.sh
+
+ejecutar:
+cd ruta_de_SocialPhish
+bash ./socialphish.sh //usamos el script
+
+elegimos opciones
+al usar ngrok, este ayuda a que la red no sea solo local, que todos la puedan ver. la otra opcion también es válida
+ahora tenemnos un link de phishing que se aprece a lo solicitado
+
+si no me anda ngrok puedo usar la otra opcion que es similar llamada Serveo.net, eligiendo el puerto 3333, que es el de defecto para la app (mundialmente no tiene un uso específico estandarizado)

@@ -1,0 +1,11 @@
+https://github.com/htr-tech/zphisher
+
+git clone --depth=1 https://github.com/htr-tech/zphisher.git
+
+bash zphisher.sh  //la inicializamos
+elijo la plataforma del ataque
+elijo la siguiente opcion
+elijo el servicio de postforwarding (nuestro sist linux arma un servidor local con la pagina web falsa) para que cualquier computadora pueda ver la plataforma web falsa
+elegir opción de Cloudflared, sin un puerto personalizado
+no cmabiar la máscara del URL (lo puedo hacer para que el link cambie de nombre, pero no me anda esta opcion)
+cada url que me dan sirve para phishing, donde luego muestra la dirección IP de la víctima

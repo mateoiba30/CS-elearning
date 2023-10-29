@@ -1,0 +1,8 @@
+phishing
+ataques haciendome pasar por una identidad. se usa ingeniería social (ganar su confianza). la técnica más efectiva
+
+ej: mandar mails con links fraudulentos
+
+virustotal es una pagina que le enviamos archivos y esta te dice si tiene posible malware
+
+dudar si el url cambia de la original de la plataforma

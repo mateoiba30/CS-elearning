@@ -1,0 +1,3 @@
+intitle: "webcamXP 5" //busco paginas donde en su nombre digan eso y estén expuestos a internet
+
+hay varias páginas que exponen datos privados en internet

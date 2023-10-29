@@ -1,0 +1,8 @@
+sudo setoolkit // herramienta que abre entorno gráfico 
+
+set> //acá pongo comandos en la interfaz
+
+ir eligiendo las opciones hasta llegar a la opcion que queremos hacer. No solo sirve para phishing, es una herramienta muy popular
+
+ngrok es una herramienta que el servidor web sea accesible en todo el mundo.
+./ngrok http 80 // genera un link jpara una pagina http, donde el host es el puerto 80 de mi computadora (la que se queda con la informacion por ser el host)

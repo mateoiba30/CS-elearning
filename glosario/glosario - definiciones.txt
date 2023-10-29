@@ -12,6 +12,16 @@ dominio: nombre de un sitio web, ej "google"
 --------------
 DNS: Es un sistema que permite traducir nombres de dominio legibles por humanos, como "Google ", en direcciones IP numéricas que son utilizadas por las computadoras para comunicarse en Internet. pasa una url web a ip del host
 --------------
+firewall
+hardware o software que actua barrera (bloquea o permite servicios) de seguridad entre la red local y redes externas, como Internet. Filtra según reglas de seguridad predefinidas, no solo examina paquetes individuales, sino también el estado de la conversación o sesión en curso. Algunos también permiten definir sus propias políticas
+--------------
+forwarding
+proceso de gestión de tráfico de red el cual se encarga de recibir, examinar (examina el encabezado, como lo es la direccion del destino por ejemplo, para encontrar la ruta óptima) y redirigir paquetes de datos desde un dispositivo de red, como un router o un switch, hacia su destino final.
+que redirige el trafico entrante desde un puerto lógico u otra fuente a un IP público o red local.
+Esto se hace para permitir que los servicios en la red local, como servidores web, aplicaciones de juegos en línea o servidores de correo, sean accesibles desde el exterior de la red local, generalmente a través de Internet.
+Hay varios tipos de forwarding: port forwarding, ip forwarding, nat forwaring, forwarding de protocolo, etc.
+Por ejemplo, si tienes un servidor web, configurarías port forwarding para redirigir el tráfico entrante en el puerto 80 (HTTP) hacia tu servidor web en la red local.
+-------------------------------
 header es un título de una pag web.
 En ciberseguridad son utilizadas por el servidor y por el navegador para establecer condiciones del envío de información. Un ejemplo de esta cabecera es:
 Strict-Transport-Security: max-age=31536000 ; includeSubDomains
@@ -36,6 +46,12 @@ para conocer mi ip privada debo usar la terminal, para conocer la pública simpl
 IPv4 (la de 4 octetos separadas por puntos) tiene una longitud de dirección de 32 bits, mientras que IPv6 tiene una longitud de dirección de 128 bits, por lo cual la ipv6 es más segura y difícil de dsscubrir. Hoy en día se usan ambas
 --------------
 JSON =JavaScript Object Notation, es un formato ligero de archivos de intercambio de datos basado en JavaScript, se diferencian en el uso de las comillas. Es el más popular por su sencillo comprendimiento.
+-------------
+marco
+=frame, sección de la memoria RAM física, usado para la técnica de paginación por ejemplo
+-------------
+marco HTML
+técnica que permite dividir una página web en varias secciones o marcos, donde cada marco puede mostrar contenido de una fuente web diferente (diferentes partes visuales). cada sección es independiente, pero esto es malo para la usabilidad y la seguridad
 ---------------
 plugin es un complemento de software que ayuda a que un programa haga algo que normalmente no haría por sí solo. Por ejemplo, WordPress es un CMS en el que puedes agregar multitud de plugins. Es decir, el plugin lo que hace es implementar de nuevas funciones un determinado software
 similar a scripts
@@ -43,21 +59,14 @@ similar a scripts
 OSI= tipo de arquitectura/modelo de interconexión de sistemas abiertos que estandariza fases o pilas para la transmición de datos. Además especifica las siete capas para el transporte de la información
 dentro de todas estas capas, la cuarta es de transmición de datos y sus protocolos para la transmición de datos son los mencionados TCP y UDP.
 Modelo OSI: sistema normativo conformado por siete niveles que define la interconexión de los sistemas en las distintas fases, también conocidas como capas, por las cuales deben atravesar los datos para viajar de un dispositivo a otro en una red de telecomunicaciones
-----------------
-puertos
-
-Los puertos físicos se refieren al tipo de enchufe que permite la interconexión entre distintos dispositivos de hardware
-los que se utilizan para servidores son : VGA para señales de video, IPMI para adminsitrar servidores, ethernet comunica equipos de redes para intercambiar datos, Serie para transmición de datos entre dispositivos red
-
-los puertos lógicos son espacio en la RAM asociados con un puerto físico. Son interfaces de software qeu ayudan a organizarse al programador sin necesidad de saber el nombre y cantidad de puertos físicos
-según el número (por convención internacional) de puerto se puede identificar el software que lo usa para entregar los datos solicitados.
-Hay dos tipos de protocolo básicos a la hora de transferir información por internet para los puertos lógicos: TCP y UDP. 
-Ambos permiten que los programas envíen mensajes a las aplicaciones de otros sistemas principales y reciban mensajes de dichas aplicaciones.
-se clasifican en bien conocidos, registrados y dinámicos/privados
-bien conocidos: del 0 al 1023, usados para servicios, programas o protocolos, con cada número de puerto reservado para cierta tarea
-registrados: del 1024 al 49151, reservados para el uso de aplicaciones donde nuevamente cada número de puerto cumple siempre la misma tarea
-dinámicos o privados: desde 49152 hasta 65535, usados por el SO para conectarse momentaneamente con una aplicación. No hay números asignados para ciertas tareas, se usan acorde a las necesidades de conexión
------------
+------------
+OTP
+one time password, se usa para autenticar identidad en un sistema, se suelen mandar por mail
+-------------
+port forwarding
+"reenvío de puertos", caso específico de forwarding, donde se redirigen paquetes de datos de un puerto específico hacia un dispositivo o servicio en la red local.
+un servicio de port forwarding es entonces un dispositivo que se ofrece como host para poder redirigir los paquetes hacia sus puertos
+------------
 protocolo = script: código adicional para brindar más acciones a un software
 ----------------
 protocolo de red: es un estándar de comunicaciones. Contiene las reglas necesarias y la información sobre cómo las computadoras intercambian datos entre sí.
@@ -78,11 +87,26 @@ hay diferentes tipos de protocolos de red:
 -protocolos de correos electrónicos como SMTP
 -protocolos de gestión como Telnet, SSH, SNMP
 -protocolos de medios como RTP, RTSP
+-protocolo de internet = IP
 
 Hay 2 modelos principales para estos protocolos: OSI y TCP/IP. Ambas hacen uso del IP
 ---------------
 proxy = proxi : servidor que hace de intermediario, ayuda a ocultar la IP de manera similar a un VPN. Esto ayuda a ocultar la identidad y que no conozcan nuestra ubicación geográfica
-------------
+----------------
+puertos
+
+Los puertos físicos se refieren al tipo de enchufe que permite la interconexión entre distintos dispositivos de hardware
+los que se utilizan para servidores son : VGA para señales de video, IPMI para adminsitrar servidores, ethernet comunica equipos de redes para intercambiar datos, Serie para transmición de datos entre dispositivos red
+
+Son interfaces de software (un numero simplemente) que ayudan a organizarse al programador sin necesidad de saber el nombre y cantidad de procesos y puertos físicos (de ser necesarios)
+según el número (por convención internacional) de puerto se puede identificar el software que lo usa para entregar los datos solicitados.
+Hay dos tipos de protocolo básicos a la hora de transferir información por internet para los puertos lógicos: TCP y UDP. 
+Ambos permiten que los programas envíen mensajes a las aplicaciones de otros sistemas principales y reciban mensajes de dichas aplicaciones.
+se clasifican en bien conocidos, registrados y dinámicos/privados
+bien conocidos: del 0 al 1023, usados para servicios, programas o protocolos, con cada número de puerto reservado para cierta tarea
+registrados: del 1024 al 49151, reservados para el uso de aplicaciones donde nuevamente cada número de puerto cumple siempre la misma tarea
+dinámicos o privados: desde 49152 hasta 65535, usados por el SO para conectarse momentaneamente con una aplicación. No hay números asignados para ciertas tareas, se usan acorde a las necesidades de conexión
+-----------
 REST arquitectura API = Transferencia de Estado Representacional = API de RESTful : REST no es un protocolo ni un estándar, sino más bien un conjunto de límites de arquitectura.
 ----------
 robots.txt es un archivo que indica a qué partes de nuestra web pueden acceder los robots o crawlers de los buscadores. Si se modifica este archivo, se puede acceder a toda la parte del backend de la página web
@@ -114,6 +138,17 @@ URL: tipo de URI que es un identificador de una página web por medio de la ubic
 https://www.example.org/gatos
 protocolo=esquema+subdomino+nombre de dominio+TDL (dominio de nivel superior)=extensión+ ruta=path=página=directorio
 -------------
+URL mask
+máscara de url = máscara de dominio. Técnica donde se oculta el verdadero URL y se muestra uno más sencillo de recordar con la ayuda de redirecciones o marcos HTML (no cambia la dirección a la que se accede).
+máscara con redirecciones: el servidor de redirige desde el url amigable, hacia el url real
+máscara con marcos HTML: al poner el url máscara, pero ven la página contenedora con el marco que muestra el contenido de la URL real
+--------------------
+URL redirection
+no es lo mismo que un mask URL. Un redirection URL es una URL que redirige a otra URL. Un mask URL es una URL que oculta la URL de destino real.
+-----------------------------
+URL shadow
+tipo de URL que contiene al final parametros de seguimiento del trafico de red de la URL normal. Estas se crean de manera automatica. Por ejemplo https://www.example.com/?_fbclid=IwAR123456789 esta URL al final tiene un parámetro de seguimiento que se utiliza para rastrear el comportamiento del usuario
+--------------
 URN: tipo de URI que es un identificador de una página web, pero no indican exactamente dónde se encuentra ese objeto
 -------------------
 VPN: red pirvada virtual que oculta nuestro IP como un proxy, pero además cifra nuestros datos. Suelen ser pagas y no se suelen trabar como los proxys. Hay VPN de directivas de no registro, lo que significa que no registran nuestro tráfico (lo que hacemos eninternet)

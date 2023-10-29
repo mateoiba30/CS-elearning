@@ -1,0 +1,13 @@
+otra herramienta similar al resto del capitulo
+obviamente hay que ejhecutar con el comando bash al archivo ejecutable .sh
+
+1ro elegir la red a atacar
+2do elijo si tener OTP o no (clave única para autenticarse)
+3ro elegir el servicio que hará el port forwarding para que la página de phishing sea visible en internet, si elijo local host solo se va a ver en mi red local
+4to elijo el peurto para el port forwarding en caso de haber elegido antes la opcoin de local host
+5to cuando alguien uso la pagina nos dice el usuario y clave
+
+aunque haya elegido la opcion de servidor local, puedo hacer visible la pagina instalando la herramienta de ngrok
+para esto hay que tenerla instalada y hacer:
+ngrok http 80 //con esto estamos activando el port forwarding de ngrok en el puerto 8080 //por ejemplo
+cada app tiene un puerto que prefiere usar. lphisher es una app web, por eso puse http. viendo el .sh de lphisher conozco el puerto predeterminado a usar, pero aún así no me funciona

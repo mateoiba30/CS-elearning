@@ -1,0 +1,6 @@
+enviar email como si somos de instagram, por ejemplo.
+hacer esto desde un mail que no sea el mio para que parezca de instagram, cambiamos la URL por una de una herramienta de phishing y listo
+cuando llega un mensaje de instagram de nuevo inicio de sesión le copiamos todo (hasta el formato queda igual) pero le cambiamos lo necesario para el ataque
+puedo poner el link de phishing debajo de un texto que diga, por ejemplo, "apreta aquí". Esto lo puedo ahcer con todos los hipervinculos
+
+también se pueden usar servicios para enviar mails desde otro mail (uno que tenga un nombre mas veridico), o puedo crearme un email que sea como Instagram_<no_responder>
